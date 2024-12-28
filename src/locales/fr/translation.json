@@ -1,0 +1,227 @@
+{
+  "portfolio": {
+    "title": "Études de cas",
+    "jrAuto": {
+      "title": "JR Auto",
+      "description1": "JR Auto nous a sollicités pour réaliser leur site web afin de soutenir le démarrage de leur activité.",
+      "description2": "Le défi était de créer un site vitrine en seulement une semaine. Nous avons redéfini le design du site avec une expérience utilisateur UX/UI de qualité...",
+      "visit": "Visiter le site"
+    },
+    "ashantiBeauty": {
+      "title": "Ashanti Beauty",
+      "description1": "Ashanti Beauty nous a sollicités alors que j'étais en formation pour réaliser un site web afin de soutenir le démarrage de son activité...",
+      "description2": "Le défi était de créer un site vitrine en seulement une semaine. Nous avons redéfini le design du site avec une expérience utilisateur UX/UI de qualité...",
+      "visit": "Visiter le site"
+    }
+  },
+  "formulaire_contact": {
+  "prenom": "Prénom",
+  "nom": "Nom",
+  "entreprise": "Entreprise",
+  "email": "Email",
+  "telephone": "Téléphone",
+  "message": "Message",
+  "placeholder_prenom": "Entrez votre prénom",
+  "placeholder_nom": "Entrez votre nom",
+  "placeholder_entreprise": "Entrez le nom de votre entreprise",
+  "placeholder_email": "exemple@domaine.com",
+  "placeholder_telephone": "0123456789",
+  "placeholder_message": "Écrivez votre message ici...",
+  "envoi_en_cours": "Envoi en cours...",
+  "envoyer": "Envoyer le message",
+  "success_message": "Votre message a été envoyé avec succès !",
+  "error_message": "Une erreur est survenue. Veuillez réessayer.",
+  "server_error": "Erreur de connexion au serveur."
+},
+  "rgpd": {
+    "title": "La protection de vos données",
+    "sections": [
+      "Quelles données collectons-nous ?",
+      "Comment utilisons-nous vos données ?",
+      "Vos droits concernant vos données",
+      "Contactez-nous"
+    ],
+    "details": [
+      "Nous collectons des données personnelles lorsque vous utilisez nos services.",
+      "Nous utilisons vos données pour personnaliser votre expérience.",
+      "Vous avez le droit d'accéder, de modifier, de supprimer vos données personnelles.",
+      "Si vous avez des questions, contactez-nous via notre formulaire."
+    ]
+  },
+  "nosServices": {
+    "pageTitle": "Nos prestations",
+    "services": {
+      "vitrine": {
+        "title": "Les sites vitrines",
+        "description": "Un site vitrine met en avant les informations essentielles d'une entreprise, facile à naviguer.",
+        "details": [
+          { "title": "Caractéristiques", "description": "Mise en avant des informations clés, sans fonction e-commerce." },
+          { "title": "Objectif", "description": "Renforcer la présence en ligne et faciliter la prise de contact." }
+        ]
+      },
+      "ecommerce": {
+        "title": "Les sites e-commerce",
+        "description": "Créer une boutique en ligne avec des options de paiement sécurisées et une gestion de stock optimisée.",
+        "details": [
+          { "title": "Caractéristiques", "description": "Boutique en ligne, gestion des paiements et stocks en temps réel." },
+          { "title": "Objectif", "description": "Faciliter la vente en ligne et offrir une expérience utilisateur optimisée." }
+        ]
+      },
+      "seo": {
+        "title": "Référencement SEO",
+        "description": "Optimisation de votre site pour être bien référencé sur Google et augmenter la visibilité.",
+        "details": [
+          { "title": "Caractéristiques", "description": "Optimisation des mots-clés et amélioration de la vitesse du site." },
+          { "title": "Objectif", "description": "Augmenter la visibilité sur les moteurs de recherche et générer du trafic qualifié." }
+        ]
+      },
+      "hosting": {
+        "title": "Hébergement sécurisé",
+        "description": "Assurez la sécurité de votre site avec un hébergement robuste et des sauvegardes régulières.",
+        "details": [
+          { "title": "Caractéristiques", "description": "Protection des données et hébergement avec des backups fréquents." },
+          { "title": "Objectif", "description": "Assurer la disponibilité et la sécurité des données." }
+        ]
+      },
+      "maintenance": {
+        "title": "Gestion et maintenance",
+        "description": "Mise à jour continue et support technique pour que votre site fonctionne parfaitement.",
+        "details": [
+          { "title": "Caractéristiques", "description": "Maintenance régulière, mises à jour et support technique." },
+          { "title": "Objectif", "description": "Garantir le bon fonctionnement et la sécurité du site." }
+        ]
+      }
+    }
+  },
+  "apropos": {
+    "chapters": [
+        "Qui sommes-nous ?",
+        "Notre mission",
+        "Nos valeurs",
+        "Notre vision pour l’avenir",
+        "Pourquoi nous choisir ?"
+    ],
+    "details": [
+        "Créée en 2025, notre société s’engage à accompagner les entreprises dans leur transformation digitale grâce à des solutions web modernes, esthétiques et performantes.\n\nSpécialisés dans la conception de sites vitrines et e-commerce, nous mettons notre expertise au service des entreprises de toutes tailles, pour les aider à se démarquer et à atteindre leurs objectifs en ligne.",
+        "Notre mission est claire :\n\n- Fournir des sites web sur mesure, à la fois beaux et fonctionnels.\n\n- Aider nos clients à développer leur visibilité et leur notoriété en ligne.\n\n- Simplifier la création et la gestion de leur présence numérique grâce à des outils adaptés.",
+        "Nos valeurs sont au cœur de tout ce que nous entreprenons :\n\n- Innovation : Nous utilisons des technologies modernes pour offrir des solutions durables et évolutives.\n- Proximité : Nous travaillons en étroite collaboration avec nos clients pour comprendre leurs besoins et dépasser leurs attentes.\n- Excellence : Nous mettons un point d’honneur à livrer des projets de haute qualité, dans les délais impartis.",
+        "Nous avons l’ambition de devenir un partenaire clé pour les entreprises souhaitant se démarquer en ligne.\n\nDans les prochaines années, nous souhaitons :\n\n- Collaborer avec un réseau élargi de clients dans divers secteurs.\n- Proposer des services innovants pour anticiper les nouvelles attentes du marché.\n- Continuer à offrir un service client irréprochable, afin de bâtir une réputation solide et durable.",
+        "Depuis notre création, nous avons fait nos preuves en accompagnant des entreprises ambitieuses dans leurs projets numériques. Voici pourquoi nos clients nous font confiance :\n\n- Une approche personnalisée : Chaque projet est unique, et nous prenons le temps de comprendre vos besoins.\n- Des solutions modernes et performantes : Nous utilisons des technologies récentes pour garantir la qualité et la longévité de vos sites.\n- Un accompagnement complet : De l’idée initiale à la mise en ligne, nous vous guidons à chaque étape."
+    ]
+},
+  "navbar": {
+    "home": "Accueil",
+    "about": "À propos",
+    "services": "Nos solutions web",
+    "portfolio": "Études de cas",
+    "contact": "Contact",
+    "rgpd": "RGPD",
+    "dashboard": "Tableau de bord"
+  },
+  "welcome": "Bienvenue sur notre site web !",
+  "carousel": {
+    "slide1": "Des sites vitrines professionnels pour votre entreprise.",
+    "slide2": "Lancez votre boutique en ligne avec un site e-commerce performant et sécurisé.",
+    "slide3": "Créez le site web de vos rêves avec AeoniX."
+  },
+  "cards": {
+    "siteWebTitle": "VOTRE SITE WEB",
+    "siteWebSubtitle": "CLÉS EN MAIN",
+    "devisTitle": "DEVIS",
+    "devisSubtitle": "GRATUIT"
+  },
+  "etapes": {
+    "title": "Votre site web clés en main",
+    "steps": [
+      "Vos besoins",
+      "Maquettes & Propositions",
+      "Développement web",
+      "Mise en ligne",
+      "Accompagnement continu"
+    ],
+    "details": [
+      "Nous commencerons par une discussion pour comprendre vos attentes et objectifs. Cette étape essentielle nous permettra de poser les bases d’un site qui correspond parfaitement à vos besoins.",
+      "À partir de vos idées, nous concevons des maquettes ou des schémas détaillés, accompagnés d’une proposition sur-mesure. Vous aurez ainsi une vision claire du futur site et pourrez valider son design avant de passer au développement.",
+      "Une fois la maquette validée, nous développons votre site avec soin, en intégrant chaque fonctionnalité selon vos besoins. Chaque étape est minutieusement testée pour garantir un rendu performant et conforme à vos attentes.",
+      "Une fois votre site finalisé, nous le mettons en ligne et veillons à ce qu’il soit parfaitement fonctionnel, prêt à offrir la meilleure expérience à vos visiteurs.",
+      "Après la mise en ligne, nous restons à vos côtés pour un suivi personnalisé. Nous vous accompagnons dans l’évolution de votre site, en effectuant des mises à jour, des ajustements, ou en répondant à vos besoins changeants."
+    ]
+  },
+  "formulaire": {
+    "coordinates_title": "Vos coordonnées",
+    "name_label": "Nom",
+    "first_name_label": "Prénom",
+    "company_label": "Entreprise (facultatif)",
+    "email_label": "Email",
+    "phone_label": "Téléphone",
+    "step1_title": "Quelle prestation vous intéresse ?",
+    "services": {
+      "vitrine": "Site vitrine",
+      "ecommerce": "Site e-commerce",
+      "custom": "Site personnalisé",
+      "hosting": "Hébergement / Nom de domaine"
+    },
+    "step2_title": "Vos besoins :",
+    "step3_title": "Fonctionnalités",
+    "graphics_title": "Le graphisme",
+    "step4_title": "Domaine, Hébergement, Maintenance et Langues disponibles",
+    "domain_hosting_title": "Domaine et Hébergement",
+    "domain_hosting": {
+      "options": {
+        "option1": "Je m'occupe de déposer le nom de domaine et de prendre un hébergement",
+        "option2": "Je souhaite que Conception Website dépose le nom de domaine et me propose un hébergement pour mon site",
+        "option3": "Je souhaite que Conception Website procède à la migration de mon site vers un nouvel hébergement et transfère mon nom de domaine"
+      }
+    },
+    "maintenance_title": "Maintenance",
+    "maintenance": {
+      "options": {
+        "option1": "Je souhaite avoir une offre de maintenance de mon site dans le devis",
+        "option2": "Non, je m'occuperai de la maintenance de mon site moi-même"
+      }
+    },
+    "language_title": "Langues disponibles",
+    "language": {
+      "options": {
+        "option1": "Uniquement en français",
+        "option2": "Une ou plusieurs autres langues en plus du français"
+      }
+    },
+    "specific_needs": "Besoins spécifiques",
+    "specific_needs_labels": {
+      "hebergement": "Hébergement",
+      "seo": "Référencement naturel (SEO)",
+      "vitesse": "Amélioration de la vitesse de chargement",
+      "nomDomaine": "Nom de domaine",
+      "migration": "Migration d'hébergement"
+    },
+    "website_url": "Quelle est l'URL de votre site ?",
+    "website_url_placeholder": "Exemple : www.monsite.com",
+    "detailed_description": "Description détaillée de votre besoin :",
+    "detailed_description_placeholder": "Décrivez vos besoins spécifiques...",
+    "project_type": "Type de projet",
+    "creation_project": "Création d'un site",
+    "refonte_project": "Vous avez un site à refondre",
+    "project_objectives": "Vos objectifs :",
+    "project_objectives_placeholder": "Décrivez les objectifs de votre projet...",
+    "refonte_site_url": "URL du site à refondre :",
+    "refonte_site_url_placeholder": "Exemple : www.monsite.com",
+    "features": [
+      "Formulaires d'inscription, demande de devis",
+      "Blog",
+      "Espace privé ou privilégié (accès client/membre)",
+      "Prise de rendez-vous",
+      "Réservation",
+      "Gestion de fichiers (téléchargement)",
+      "Carte dynamique type Google Maps (localisations)"
+    ],
+    "graphics_options": [
+      "Je n'ai aucun élément",
+      "Je veux faire créer mon logo et ma charte graphique",
+      "Je fournis des instructions détaillées pour le graphisme (charte graphique, zoning, maquettes...)"
+    ],
+    "previous_button": "Précédent",
+    "next_button": "Suivant",
+    "send_button": "Envoyer"
+  }
+}

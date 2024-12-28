@@ -1,0 +1,227 @@
+{
+  "portfolio": {
+    "title": "Case Studies",
+    "jrAuto": {
+      "title": "JR Auto",
+      "description1": "JR Auto approached us to create their website to support the launch of their business.",
+      "description2": "The challenge was to create a showcase website in just one week. We redesigned the site's look with a quality UX/UI user experience...",
+      "visit": "Visit the website"
+    },
+    "ashantiBeauty": {
+      "title": "Ashanti Beauty",
+      "description1": "Ashanti Beauty approached us while I was in training to create a website to support the launch of their business...",
+      "description2": "The challenge was to create a showcase website in just one week. We redesigned the site's look with a quality UX/UI user experience...",
+      "visit": "Visit the website"
+    }
+  },
+  "formulaire_contact": {
+  "prenom": "First Name",
+  "nom": "Last Name",
+  "entreprise": "Company",
+  "email": "Email",
+  "telephone": "Phone",
+  "message": "Message",
+  "placeholder_prenom": "Enter your first name",
+  "placeholder_nom": "Enter your last name",
+  "placeholder_entreprise": "Enter your company name",
+  "placeholder_email": "example@domain.com",
+  "placeholder_telephone": "0123456789",
+  "placeholder_message": "Write your message here...",
+  "envoi_en_cours": "Sending...",
+  "envoyer": "Send Message",
+  "success_message": "Your message has been successfully sent!",
+  "error_message": "An error occurred. Please try again.",
+  "server_error": "Server connection error."
+},
+  "rgpd": {
+    "title": "Protecting your data",
+    "sections": [
+      "What data do we collect?",
+      "How do we use your data?",
+      "Your rights regarding your data",
+      "Contact us"
+    ],
+    "details": [
+      "We collect personal data when you use our services.",
+      "We use your data to personalize your experience.",
+      "You have the right to access, modify, and delete your personal data.",
+      "If you have any questions, contact us via our form."
+    ]
+  },
+  "nosServices": {
+    "pageTitle": "Our Services",
+    "services": {
+      "vitrine": {
+        "title": "Showcase Websites",
+        "description": "A showcase website highlights a company's essential information, easy to navigate.",
+        "details": [
+          { "title": "Features", "description": "Highlights key information, no e-commerce functionality." },
+          { "title": "Objective", "description": "Strengthen online presence and facilitate contact." }
+        ]
+      },
+      "ecommerce": {
+        "title": "E-commerce Websites",
+        "description": "Create an online store with secure payment options and optimized stock management.",
+        "details": [
+          { "title": "Features", "description": "Online store, real-time payment and stock management." },
+          { "title": "Objective", "description": "Facilitate online sales and provide an optimized user experience." }
+        ]
+      },
+      "seo": {
+        "title": "SEO Optimization",
+        "description": "Optimize your site to rank well on Google and increase visibility.",
+        "details": [
+          { "title": "Features", "description": "Keyword optimization and site speed improvement." },
+          { "title": "Objective", "description": "Increase visibility on search engines and generate qualified traffic." }
+        ]
+      },
+      "hosting": {
+        "title": "Secure Hosting",
+        "description": "Ensure your site's security with robust hosting and regular backups.",
+        "details": [
+          { "title": "Features", "description": "Data protection and hosting with frequent backups." },
+          { "title": "Objective", "description": "Ensure availability and data security." }
+        ]
+      },
+      "maintenance": {
+        "title": "Management and Maintenance",
+        "description": "Continuous updates and technical support to keep your site running perfectly.",
+        "details": [
+          { "title": "Features", "description": "Regular maintenance, updates, and technical support." },
+          { "title": "Objective", "description": "Ensure proper functioning and site security." }
+        ]
+      }
+    }
+  },
+  "apropos": {
+    "chapters": [
+        "Who are we?",
+        "Our mission",
+        "Our values",
+        "Our vision for the future",
+        "Why choose us?"
+    ],
+    "details": [
+        "Created in 2025, our company is committed to supporting businesses in their digital transformation with modern, aesthetic, and high-performance web solutions.",
+        "Our mission is clear:\n\n- Provide tailor-made websites, both beautiful and functional.\n- Help our clients grow their online visibility and reputation.\n- Simplify the creation and management of their online presence with suitable tools.",
+        "Our values are at the heart of everything we do:\n\n- Innovation: We use modern technologies to offer sustainable and scalable solutions.\n- Proximity: We work closely with our clients to understand their needs and exceed their expectations.\n- Excellence: We are committed to delivering high-quality projects on time.",
+        "We aim to become a key partner for businesses looking to stand out online.\n\nIn the coming years, we want to:\n\n- Collaborate with a broader network of clients in various sectors.\n- Offer innovative services to anticipate new market expectations.\n- Continue to provide impeccable customer service.",
+        "Since our creation, we have proven ourselves by supporting ambitious businesses in their digital projects. Here’s why our clients trust us:\n\n- A personalized approach: Each project is unique, and we take the time to understand your needs.\n- Modern and high-performance solutions: We use the latest technologies to ensure the quality and longevity of your sites.\n- Comprehensive support: From the initial idea to going live, we guide you every step of the way."
+    ]
+},
+  "navbar": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Our Web Solutions",
+    "portfolio": "Case Studies",
+    "contact": "Contact",
+    "rgpd": "GDPR",
+    "dashboard": "Dashboard"
+  },
+  "welcome": "Welcome to our website!",
+  "carousel": {
+    "slide1": "Professional showcase websites for your business.",
+    "slide2": "Launch your online store with a powerful and secure e-commerce site.",
+    "slide3": "Create the website of your dreams with AeoniX."
+  },
+  "cards": {
+    "siteWebTitle": "YOUR WEBSITE",
+    "siteWebSubtitle": "READY TO GO",
+    "devisTitle": "QUOTE",
+    "devisSubtitle": "FREE"
+  },
+  "etapes": {
+    "title": "Your turnkey website",
+    "steps": [
+      "Your needs",
+      "Mockups & Proposals",
+      "Web Development",
+      "Go Live",
+      "Continuous Support"
+    ],
+    "details": [
+      "We will start with a discussion to understand your expectations and goals. This essential step will allow us to lay the foundation for a site that perfectly meets your needs.",
+      "Based on your ideas, we create mockups or detailed plans, accompanied by a tailor-made proposal. You will have a clear vision of the future site and can approve its design before moving to development.",
+      "Once the mockup is approved, we carefully develop your site, integrating each feature according to your needs. Each step is thoroughly tested to ensure a high-performance result that meets your expectations.",
+      "Once your site is finalized, we put it online and ensure that it is fully functional, ready to offer the best experience to your visitors.",
+      "After going live, we stay by your side for personalized follow-up. We assist you in the evolution of your site, performing updates, adjustments, or meeting your changing needs."
+    ]
+  },
+  "formulaire": {
+    "coordinates_title": "Your contact information",
+    "name_label": "Last Name",
+    "first_name_label": "First Name",
+    "company_label": "Company (optional)",
+    "email_label": "Email",
+    "phone_label": "Phone",
+    "step1_title": "Which service are you interested in?",
+    "services": {
+      "vitrine": "Showcase site",
+      "ecommerce": "E-commerce site",
+      "custom": "Custom site",
+      "hosting": "Hosting / Domain name"
+    },
+    "step2_title": "Your needs:",
+    "step3_title": "Features",
+    "graphics_title": "Graphics",
+    "step4_title": "Domain, Hosting, Maintenance, and Available Languages",
+    "domain_hosting_title": "Domain and Hosting",
+    "domain_hosting": {
+      "options": {
+        "option1": "I will handle the domain registration and hosting myself",
+        "option2": "I want Conception Website to register the domain and propose hosting for my site",
+        "option3": "I want Conception Website to migrate my site to a new host and transfer my domain"
+      }
+    },
+    "maintenance_title": "Maintenance",
+    "maintenance": {
+      "options": {
+        "option1": "I would like to have a maintenance offer included in the quote",
+        "option2": "No, I will handle the maintenance myself"
+      }
+    },
+    "language_title": "Available Languages",
+    "language": {
+      "options": {
+        "option1": "French only",
+        "option2": "One or more additional languages besides French"
+      }
+    },
+    "specific_needs": "Specific needs",
+    "specific_needs_labels": {
+      "hebergement": "Hosting",
+      "seo": "SEO Optimization",
+      "vitesse": "Speed improvement",
+      "nomDomaine": "Domain name",
+      "migration": "Hosting migration"
+    },
+    "website_url": "What is your site's URL?",
+    "website_url_placeholder": "Example: www.mysite.com",
+    "detailed_description": "Detailed description of your need:",
+    "detailed_description_placeholder": "Describe your specific needs...",
+    "project_type": "Project Type",
+    "creation_project": "Create a site",
+    "refonte_project": "You want to revamp an existing site",
+    "project_objectives": "Your objectives:",
+    "project_objectives_placeholder": "Describe your project goals...",
+    "refonte_site_url": "URL of the site to revamp:",
+    "refonte_site_url_placeholder": "Example: www.mysite.com",
+    "features": [
+      "Registration forms, quote requests",
+      "Blog",
+      "Private or privileged space (client/member access)",
+      "Appointment booking",
+      "Reservation",
+      "File management (upload)",
+      "Dynamic map like Google Maps (locations)"
+    ],
+    "graphics_options": [
+      "I have no elements",
+      "I want my logo and graphic charter to be created",
+      "I provide detailed instructions for the graphics (graphic charter, zoning, mockups...)"
+    ],
+    "previous_button": "Previous",
+    "next_button": "Next",
+    "send_button": "Send"
+  }
+}

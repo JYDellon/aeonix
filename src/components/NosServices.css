@@ -1,0 +1,145 @@
+/* NosServices.css */
+
+/* Conteneur principal */
+.services-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px 20px;
+  margin-bottom: 200px;
+}
+
+/* Titre de la section */
+.services-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* Grille de services */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 15px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Carte de service */
+.service-card {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+  font-weight: bold;
+
+}
+
+/* Effet au survol de la carte */
+.service-card:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Titre de la carte */
+.service-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 10px;
+  margin-top: -15px;
+
+  transition: opacity 0.3s ease;
+}
+
+/* Description du service */
+.service-description {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 20px;
+  visibility: visible;
+  opacity: 1;
+  text-align: justify;
+  transition: opacity 0.3s ease, visibility 0s 0.3s; /* Transition en douceur */
+}
+
+/* Détails du service (initialement cachés) */
+.service-details {
+  opacity: 0;
+  visibility: hidden;
+  margin-top: -5px;
+  font-size: 18px;
+  color: #555;
+  text-align: justify;
+  transition: opacity 0.3s ease, visibility 0s 0.3s;
+}
+
+/* Affichage des détails au survol de la carte */
+.service-card:hover .service-details {
+  opacity: 1;
+  visibility: visible; /* Les détails deviennent visibles */
+  transition: opacity 0.3s ease, visibility 0s 0s;
+  display: block;
+}
+
+/* Affichage des détails au survol de la carte */
+.service-card .service-details {
+  opacity: 1;
+  visibility: visible; /* Les détails deviennent visibles */
+  transition: opacity 0.3s ease, visibility 0s 0s;
+  display: none;
+}
+
+
+
+/* Masquer la description au survol */
+.service-card:hover .service-description {
+  display:none
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+.intro-textNosServices {
+  margin: 0 auto;
+  margin-top: 20px;
+  font-weight: bold;
+  margin-bottom: -25px;
+  text-align: center;
+  font-size: 2em;
+  color: #054461;
+  padding: 10px 30px 10px 30px;
+  width: 90%;
+  border-radius: 30px;
+  background: #ffffff;
+  width: 420px;
+  background: linear-gradient(to right, #bac1bb, #9bb8bc8d);    border: 1px solid #d7dcd8;
+ 
+  /* Ajout de l'animation */
+  animation: descendreIntroduction 1s ease-out forwards;
+}
