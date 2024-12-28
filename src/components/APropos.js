@@ -22,7 +22,7 @@ function APropos() {
     const recordVisit = async () => {
         try {
             const response = await axios.post(
-                'https://api-aeonix.vercel.app/api/visit/a-propos',
+                'https://aeonixbackend.vercel.app/api/visit/a-propos',
                 {},
                 {
                     headers: {
