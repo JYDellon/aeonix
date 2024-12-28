@@ -42,19 +42,7 @@ function Accueil() {
                         },
                     }
                 );
-
-
-
-
-
-
-
-
-
-
-                
-
-                console.log("Visite enregistrée avec succès :", response.data);
+               console.log("Visite enregistrée avec succès :", response.data);
 
                 // Ajouter cette page aux pages visitées dans sessionStorage
                 visitedPages[pageName] = true;
