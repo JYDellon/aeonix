@@ -43,6 +43,11 @@ function Accueil() {
                     }
                 );
 
+
+
+
+                
+
                 console.log("Visite enregistrée avec succès :", response.data);
 
                 // Ajouter cette page aux pages visitées dans sessionStorage
