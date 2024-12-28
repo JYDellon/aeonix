@@ -180,17 +180,17 @@ function Contact() {
     const [showScrollToTop, setShowScrollToTop] = useState(false);
     const [isFormVisible, setIsFormVisible] = useState(false);
     const navigate = useNavigate();
-    const pageName = 'contact'; // Nom unique de la page
+    const pageUrl = 'contact'; // Nom unique de la page
 
     // Fonction pour enregistrer une visite
     const recordVisit = async () => {
         try {
             // Vérifier si la page a déjà été enregistrée dans sessionStorage
             const visitedPages = JSON.parse(sessionStorage.getItem('visitedPages')) || {};
-            if (!visitedPages[pageName]) {
+            if (!visitedPages[pageUrl]) {
                 // Si non, envoyer la requête pour enregistrer la visite
                 const response = await axios.post(
-                    `https://api-aeonix.vercel.app/api/visit/${pageName}`,
+                    `https://api-aeonix.vercel.app/api/visit/${pageUrl}`,
                     {},
                     {
                         headers: {
@@ -201,7 +201,7 @@ function Contact() {
                 console.log("Visite enregistrée avec succès :", response.data);
 
                 // Ajouter cette page aux pages visitées dans sessionStorage
-                visitedPages[pageName] = true;
+                visitedPages[pageUrl] = true;
                 sessionStorage.setItem('visitedPages', JSON.stringify(visitedPages));
             } else {
                 console.log("La visite pour cette page a déjà été enregistrée pendant cette session.");

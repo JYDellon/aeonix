@@ -38,16 +38,16 @@ function APropos() {
 
     // Vérification et enregistrement de la visite unique par session
     useEffect(() => {
-        const pageName = 'a-propos'; // Nom unique de la page
+        const pageUrl = 'a-propos'; // Nom unique de la page
         const visitedPages = JSON.parse(sessionStorage.getItem('visitedPages')) || {};
 
-        if (!visitedPages[pageName]) {
-            console.log(`[useEffect] La page "${pageName}" n'a pas encore été visitée dans cette session.`);
+        if (!visitedPages[pageUrl]) {
+            console.log(`[useEffect] La page "${pageUrl}" n'a pas encore été visitée dans cette session.`);
             recordVisit();
-            visitedPages[pageName] = true;
+            visitedPages[pageUrl] = true;
             sessionStorage.setItem('visitedPages', JSON.stringify(visitedPages));
         } else {
-            console.log(`[useEffect] La page "${pageName}" a déjà été visitée dans cette session.`);
+            console.log(`[useEffect] La page "${pageUrl}" a déjà été visitée dans cette session.`);
         }
     }, []);
 

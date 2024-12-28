@@ -6,14 +6,14 @@
 // import '@fortawesome/fontawesome-free/css/all.min.css'; // Si vous utilisez FontAwesome
 
 // function Portfolio() {
-//     const pageName = 'portfolio'; // Nom unique pour cette page
+//     const pageUrl = 'portfolio'; // Nom unique pour cette page
 
 //     // Fonction pour enregistrer une visite
 //     const recordVisit = async () => {
 //         try {
 //             // Vérifier si la page a déjà été enregistrée dans sessionStorage
 //             const visitedPages = JSON.parse(sessionStorage.getItem('visitedPages')) || {};
-//             if (!visitedPages[pageName]) {
+//             if (!visitedPages[pageUrl]) {
 //                 // Si non, envoyer la requête pour enregistrer la visite
 //                 const response = await axios.post('https://api-aeonix.vercel.app/api/visit/portfolio', {}, {
 //                     headers: {
@@ -23,7 +23,7 @@
 //                 console.log("Visite enregistrée avec succès", response.data);
 
 //                 // Ajouter cette page aux pages visitées dans sessionStorage
-//                 visitedPages[pageName] = true;
+//                 visitedPages[pageUrl] = true;
 //                 sessionStorage.setItem('visitedPages', JSON.stringify(visitedPages));
 //             } else {
 //                 console.log("La visite pour cette page a déjà été enregistrée pendant cette session.");
@@ -145,13 +145,13 @@ import { useTranslation } from 'react-i18next'; // Importation de useTranslation
 
 function Portfolio() {
   const { t } = useTranslation(); // Utilisation du hook pour accéder aux traductions
-  const pageName = 'portfolio'; // Nom unique pour cette page
+  const pageUrl = 'portfolio'; // Nom unique pour cette page
 
   // Fonction pour enregistrer une visite
   const recordVisit = async () => {
     try {
       const visitedPages = JSON.parse(sessionStorage.getItem('visitedPages')) || {};
-      if (!visitedPages[pageName]) {
+      if (!visitedPages[pageUrl]) {
         const response = await axios.post(
           'https://api-aeonix.vercel.app/api/visit/portfolio',
           {},
@@ -163,7 +163,7 @@ function Portfolio() {
         );
         console.log("Visite enregistrée avec succès", response.data);
 
-        visitedPages[pageName] = true;
+        visitedPages[pageUrl] = true;
         sessionStorage.setItem('visitedPages', JSON.stringify(visitedPages));
       } else {
         console.log("La visite pour cette page a déjà été enregistrée pendant cette session.");

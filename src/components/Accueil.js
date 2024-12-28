@@ -12,7 +12,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 function Accueil() {
     const navigate = useNavigate();
     const { t } = useTranslation(); // Hook pour les traductions
-    const pageName = 'accueil'; // Nom unique pour la page
+    const pageUrl  = 'accueil'; // Nom unique pour la page
 
     // Configuration du carousel
     const settings = {
@@ -25,16 +25,17 @@ function Accueil() {
         autoplay: true,
         autoplaySpeed: 5000,
         pauseOnHover: true,
+
     };
 
     const recordVisit = async () => {
         try {
             // Vérifier si la page a déjà été enregistrée dans sessionStorage
             const visitedPages = JSON.parse(sessionStorage.getItem('visitedPages')) || {};
-            if (!visitedPages[pageName]) {
+            if (!visitedPages[pageUrl ]) {
                 // Si non, envoyer la requête pour enregistrer la visite
                 const response = await axios.post(
-                    `https://api-aeonix.vercel.app/api/visit/${pageName}`,
+                    `https://api-aeonix.vercel.app/api/visit/${pageUrl }`,
                     {},
                     {
                         headers: {
@@ -46,7 +47,7 @@ function Accueil() {
                 console.log("Visite enregistrée avec succès :", response.data);
 
                 // Ajouter cette page aux pages visitées dans sessionStorage
-                visitedPages[pageName] = true;
+                visitedPages[pageUrl ] = true;
                 sessionStorage.setItem('visitedPages', JSON.stringify(visitedPages));
             } else {
                 console.log("La visite pour cette page a déjà été enregistrée pendant cette session.");
