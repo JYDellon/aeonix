@@ -34,7 +34,7 @@
 //     setError(null);
 //     try {
 
-//       const response = await fetch('http://localhost:8000/api/contact', {
+//       const response = await fetch('https://api-aeonix.vercel.app/api/contact', {
 //         method: 'POST',
 //         headers: {
 //             'Content-Type': 'application/json',
@@ -216,7 +216,7 @@
 //     setIsSubmitting(true);
 //     setError(null);
 //     try {
-//       const response = await fetch('http://localhost:8000/api/contact', {
+//       const response = await fetch('https://api-aeonix.vercel.app/api/contact', {
 //         method: 'POST',
 //         headers: {
 //           'Content-Type': 'application/json',
@@ -394,7 +394,7 @@ const FormulaireContact = ({ onClose }) => {
     setIsSubmitting(true);
     setError(null);
     try {
-      const response = await fetch('http://localhost:8000/api/contact', {
+      const response = await fetch('https://api-aeonix.vercel.app/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

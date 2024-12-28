@@ -56,7 +56,7 @@
 //       const visitedPages = JSON.parse(sessionStorage.getItem('visitedPages')) || {};
 //       if (!visitedPages[pageName]) {
 //         // Si non, envoyer la requête pour enregistrer la visite
-//         const response = await axios.post(`http://localhost:8000/api/visit/${pageName}`, {}, {
+//         const response = await axios.post(`https://api-aeonix.vercel.app/api/visit/${pageName}`, {}, {
 //           headers: {
 //             'Content-Type': 'application/json',
 //           }
@@ -161,7 +161,7 @@ const NosServices = () => {
       const visitedPages = JSON.parse(sessionStorage.getItem('visitedPages')) || {};
       if (!visitedPages[pageName]) {
         const response = await axios.post(
-          `http://localhost:8000/api/visit/${pageName}`,
+          `https://api-aeonix.vercel.app/api/visit/${pageName}`,
           {},
           {
             headers: {

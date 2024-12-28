@@ -35,7 +35,7 @@
 // //     const recordVisit = async () => {
 // //         try {
 // //             const response = await axios.post(
-// //                 'http://localhost:8000/api/visit/a-propos',
+// //                 'https://api-aeonix.vercel.app/api/visit/a-propos',
 // //                 {},
 // //                 {
 // //                     headers: {
@@ -148,7 +148,7 @@
 // //     const recordVisit = async () => {
 // //         try {
 // //             const response = await axios.post(
-// //                 'http://localhost:8000/api/visit/a-propos',
+// //                 'https://api-aeonix.vercel.app/api/visit/a-propos',
 // //                 {},
 // //                 {
 // //                     headers: {
@@ -263,7 +263,7 @@
 //     const recordVisit = async () => {
 //         try {
 //             const response = await axios.post(
-//                 'http://localhost:8000/api/visit/a-propos',
+//                 'https://api-aeonix.vercel.app/api/visit/a-propos',
 //                 {},
 //                 {
 //                     headers: {
@@ -377,7 +377,7 @@ function APropos() {
     const recordVisit = async () => {
         try {
             const response = await axios.post(
-                'http://localhost:8000/api/visit/a-propos',
+                'https://api-aeonix.vercel.app/api/visit/a-propos',
                 {},
                 {
                     headers: {
