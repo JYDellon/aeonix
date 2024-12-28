@@ -34,7 +34,7 @@ function Accueil() {
             if (!visitedPages[pageName]) {
                 // Si non, envoyer la requête pour enregistrer la visite
                 const response = await axios.post(
-                    `https://api-aeonix.vercel.app/visit/${pageName}`,
+                    `https://api-aeonix.vercel.app/api/visit/${pageName}`,
                     {},
                     {
                         headers: {
