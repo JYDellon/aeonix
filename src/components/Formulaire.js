@@ -253,6 +253,108 @@ const handleSuivant = (e) => {
   };
 
 
+  // const envoyerEmail = async (e) => {
+  //   e.preventDefault();
+  
+  //   // Traductions des réponses utilisateur de l'anglais vers le français
+  //   const traductions = {
+  //     prestation: {
+  //       vitrine: "Site vitrine",
+  //       ecommerce: "Site e-commerce",
+  //       custom: "Site personnalisé",
+  //       hosting: "Hébergement / Nom de domaine",
+  //     },
+  //     fonctionnalites: {
+  //       "Registration forms, quote requests": "Formulaires d'inscription, demande de devis",
+  //       "Blog": "Blog",
+  //       "Private or privileged space (client/member access)": "Espace privé ou privilégié (accès client/membre)",
+  //       "Appointment booking": "Prise de rendez-vous",
+  //       "Reservation": "Réservation",
+  //       "File management (upload)": "Gestion de fichiers (téléchargement)",
+  //       "Dynamic map like Google Maps (locations)": "Carte dynamique type Google Maps (localisations)",
+  //     },
+  //     graphisme: {
+  //       "I have no elements": "Je n'ai aucun élément",
+  //       "I want my logo and graphic charter to be created": "Je veux faire créer mon logo et ma charte graphique",
+  //       "I provide detailed instructions for the graphics (graphic charter, zoning, mockups...)":
+  //         "Je fournis des instructions détaillées pour le graphisme (charte graphique, zoning, maquettes...)",
+  //     },
+  //     specific_needs_labels: {
+  //       hebergement: "Hébergement",
+  //       seo: "Référencement naturel (SEO)",
+  //       vitesse: "Amélioration de la vitesse de chargement",
+  //       nomDomaine: "Nom de domaine",
+  //       migration: "Migration d'hébergement",
+  //     },
+  //   };
+  
+  //   // Traduction des réponses
+  //   const prestationTraduit = traductions.prestation[prestation] || prestation;
+  //   const fonctionnalitesTraduites = fonctionnalites
+  //     .map((fonctionnalite) => traductions.fonctionnalites[fonctionnalite] || fonctionnalite)
+  //     .join(', ');
+  //   const graphismeTraduit = traductions.graphisme[graphisme] || graphisme;
+  //   const besoinsHebergementTraduits = Object.entries(besoinsHébergement)
+  //     .filter(([_, checked]) => checked)
+  //     .map(([key]) => traductions.specific_needs_labels[key] || key)
+  //     .join(', ') || 'Aucun besoin spécifique';
+  
+  //   // Traduction des champs texte saisis par l'utilisateur
+  //   const objectifsTraduit = await traduireTexte(objectifs, "fr");
+  //   const descriptionBesoinsTraduit = await traduireTexte(descriptionBesoins, "fr");
+  //   const urlSiteTraduit = await traduireTexte(urlSite, "fr");
+  //   const urlSiteRefonteTraduit = await traduireTexte(urlSiteRefonte, "fr");
+  
+  //   // Créer les paramètres du modèle d'e-mail
+  //   const templateParams = {
+  //     prenom,
+  //     nom,
+  //     email,
+  //     telephone,
+  //     nomEntreprise,
+  //     prestation: prestationTraduit,
+  //     descriptionBesoins: descriptionBesoinsTraduit,
+  //     objectifs: objectifsTraduit,
+  //     urlSite: prestation === 'hosting' && urlSiteTraduit.trim() !== '' ? urlSiteTraduit : '',
+  //     fonctionnalites: fonctionnalitesTraduites,
+  //     graphisme: graphismeTraduit,
+  //     typeProjet: typeProjetSelectionne === 'création'
+  //       ? `Création d'un site ${prestationTraduit}`
+  //       : `Refonte d'un site ${prestationTraduit}`,
+  //     urlSiteRefonte: refonteChoisie ? urlSiteRefonteTraduit : '',
+  //     besoinsHebergement: besoinsHebergementTraduits,
+  
+  //     // Ajout des nouvelles pages
+  //     domaineOption: domaineOption || "Non spécifié",
+  //     maintenanceOption: maintenanceOption || "Non spécifié",
+  //     langueOption: langueOption || "Non spécifié",
+  //   };
+  
+  //   try {
+  //     const response = await fetch('http://localhost:8000/api/devis', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify(templateParams),
+  //     });
+  
+  //     if (response.ok) {
+  //       setIsSuccessModalVisible(true); // Afficher la modale de succès
+  //     } else {
+  //       setErrorMessage("Une erreur est survenue lors de l'envoi de votre demande.");
+  //       setIsModalVisible(true); // Afficher la modale d'erreur
+  //     }
+  //   } catch (error) {
+  //     setErrorMessage("Une erreur est survenue lors de l'envoi de votre demande.");
+  //     setIsModalVisible(true); // Afficher la modale d'erreur
+  //   }
+  // };
+  
+
+
+
+
 
   const envoyerEmail = async (e) => {
     e.preventDefault();
@@ -334,7 +436,7 @@ const handleSuivant = (e) => {
         };
 
         // Envoyer l'email via l'API
-        const response = await fetch('https://api-aeonix.vercel.app/api/devis', {
+        const response = await fetch('http://localhost:8000/api/devis', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
