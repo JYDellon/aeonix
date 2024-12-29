@@ -37,7 +37,7 @@ function Dashboard() {
   useEffect(() => {
     if (activeTab === 'visits') {
       axios
-        .get('https://api-aeonix-git-master-dellons-projects.vercel.app/api/visit')
+        .get('https://api-aeonix.vercel.app/api/visit')
         .then((response) => {
           setPageVisits(response.data.filter((visit) => visit.pageUrl !== '/dashboard'));
         })
@@ -49,14 +49,14 @@ function Dashboard() {
 
   const fetchProspects = () => {
     axios
-      .get('https://api-aeonix-git-master-dellons-projects.vercel.app/api/prospects')
+      .get('https://api-aeonix.vercel.app/api/prospects')
       .then((response) => setProspects(response.data))
       .catch((error) => console.error('Erreur lors de la récupération des prospects:', error));
   };
 
   const handleCreateProspect = () => {
     axios
-      .post('https://api-aeonix-git-master-dellons-projects.vercel.app/api/prospects', newProspect)
+      .post('https://api-aeonix.vercel.app/api/prospects', newProspect)
       .then(() => {
         fetchProspects();
         setShowCreateForm(false);
@@ -68,7 +68,7 @@ function Dashboard() {
   const handleUpdateProspect = () => {
     if (editingProspect) {
       axios
-        .put(`https://api-aeonix-git-master-dellons-projects.vercel.app/api/prospect/${editingProspect.id}`, editingProspect)
+        .put(`https://api-aeonix.vercel.app/api/prospect/${editingProspect.id}`, editingProspect)
         .then(() => {
           fetchProspects();
           setEditingProspect(null);
@@ -84,7 +84,7 @@ function Dashboard() {
     }
 
     axios
-      .post('https://api-aeonix-git-master-dellons-projects.vercel.app/api/prospects/delete', { ids: selectedProspects })
+      .post('https://api-aeonix.vercel.app/api/prospects/delete', { ids: selectedProspects })
       .then(() => {
         alert('Prospects supprimés avec succès.');
         fetchProspects();
@@ -127,7 +127,7 @@ function Dashboard() {
         }))
       );
 
-      await axios.post('https://api-aeonix-git-master-dellons-projects.vercel.app/api/send-emails', {
+      await axios.post('https://api-aeonix.vercel.app/api/send-emails', {
         recipients: selectedProspectsData.map((prospect) => prospect.email),
         subject: emailSubject,
         body: emailBody,
