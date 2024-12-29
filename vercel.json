@@ -1,8 +1,9 @@
 {
-    "build": {
-      "env": {
-        "NODE_VERSION": "18.x"
-      }
+  "version": 2,
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://api-aeonix.vercel.app/api/$1"
     }
-  }
-  
+  ]
+}
