@@ -137,14 +137,14 @@
 //     // Enregistrer la visite lors du chargement de la page
 //     useEffect(() => {
 //         const recordVisit = async () => {
-//             const pageUrl = 'etapesCreationSite';
+//             const pageName = 'etapesCreationSite';
 //             try {
 //                 // Vérifier si la page a déjà été enregistrée dans sessionStorage
 //                 const visitedPages = JSON.parse(sessionStorage.getItem('visitedPages')) || {};
-//                 if (!visitedPages[pageUrl]) {
+//                 if (!visitedPages[pageName]) {
 //                     // Si non, envoyer la requête pour enregistrer la visite
 //                     const response = await axios.post(
-//                         `https://api-aeonix.vercel.app/api/visit/${pageUrl}`,
+//                         `https://api-aeonix.vercel.app/api/visit/${pageName}`,
 //                         {},
 //                         {
 //                             headers: {
@@ -155,7 +155,7 @@
 //                     console.log("Visite enregistrée avec succès", response.data);
 
 //                     // Ajouter cette page aux pages visitées dans sessionStorage
-//                     visitedPages[pageUrl] = true;
+//                     visitedPages[pageName] = true;
 //                     sessionStorage.setItem('visitedPages', JSON.stringify(visitedPages));
 //                 } else {
 //                     console.log("La visite pour cette page a déjà été enregistrée pendant cette session.");
@@ -242,12 +242,12 @@ function EtapesDansLaCreationDunSite() {
     // Enregistrer la visite lors du chargement de la page
     useEffect(() => {
         const recordVisit = async () => {
-            const pageUrl = 'etapesCreationSite';
+            const pageName = 'etapesCreationSite';
             try {
                 const visitedPages = JSON.parse(sessionStorage.getItem('visitedPages')) || {};
-                if (!visitedPages[pageUrl]) {
+                if (!visitedPages[pageName]) {
                     const response = await axios.post(
-                        `https://api-aeonix.vercel.app/api/visit/${pageUrl}`,
+                        `https://api-aeonix.vercel.app/api/visit/${pageName}`,
                         {},
                         {
                             headers: {
@@ -256,7 +256,7 @@ function EtapesDansLaCreationDunSite() {
                         }
                     );
                     console.log("Visite enregistrée avec succès", response.data);
-                    visitedPages[pageUrl] = true;
+                    visitedPages[pageName] = true;
                     sessionStorage.setItem('visitedPages', JSON.stringify(visitedPages));
                 } else {
                     console.log("La visite pour cette page a déjà été enregistrée pendant cette session.");

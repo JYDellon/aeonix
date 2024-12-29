@@ -21,14 +21,14 @@
 //   const [sectionSelectionnee, setSectionSelectionnee] = useState(null);
 
 //   // Nom unique de la page
-//   const pageUrl = 'rgpd';
+//   const pageName = 'rgpd';
 
 //   // Fonction pour enregistrer la visite de la page
 //   const recordVisit = async () => {
 //     try {
 //       // Vérifier si la page a déjà été enregistrée dans sessionStorage
 //       const visitedPages = JSON.parse(sessionStorage.getItem('visitedPages')) || {};
-//       if (!visitedPages[pageUrl]) {
+//       if (!visitedPages[pageName]) {
 //         // Si non, envoyer la requête pour enregistrer la visite
 //         const response = await axios.post('https://api-aeonix.vercel.app/api/visit/rgpd', {}, {
 //           headers: {
@@ -38,7 +38,7 @@
 //         console.log("Visite enregistrée avec succès :", response.data);
 
 //         // Ajouter cette page aux pages visitées dans sessionStorage
-//         visitedPages[pageUrl] = true;
+//         visitedPages[pageName] = true;
 //         sessionStorage.setItem('visitedPages', JSON.stringify(visitedPages));
 //       } else {
 //         console.log("La visite pour cette page a déjà été enregistrée pendant cette session.");
@@ -131,14 +131,14 @@ function Rgpd() {
   const [sectionSelectionnee, setSectionSelectionnee] = useState(null);
 
   // Nom unique de la page
-  const pageUrl = 'rgpd';
+  const pageName = 'rgpd';
 
   // Fonction pour enregistrer la visite de la page
   const recordVisit = async () => {
     try {
       // Vérifier si la page a déjà été enregistrée dans sessionStorage
       const visitedPages = JSON.parse(sessionStorage.getItem('visitedPages')) || {};
-      if (!visitedPages[pageUrl]) {
+      if (!visitedPages[pageName]) {
         // Si non, envoyer la requête pour enregistrer la visite
         const response = await axios.post('https://api-aeonix.vercel.app/api/visit/rgpd', {}, {
           headers: {
@@ -148,7 +148,7 @@ function Rgpd() {
         console.log("Visite enregistrée avec succès :", response.data);
 
         // Ajouter cette page aux pages visitées dans sessionStorage
-        visitedPages[pageUrl] = true;
+        visitedPages[pageName] = true;
         sessionStorage.setItem('visitedPages', JSON.stringify(visitedPages));
       } else {
         console.log("La visite pour cette page a déjà été enregistrée pendant cette session.");
