@@ -12,7 +12,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 function Accueil() {
     const navigate = useNavigate();
     const { t } = useTranslation(); // Hook pour les traductions
-    const pageUrl  = accueil; // Nom unique pour la page
+    const pageUrl  = 'accueil'; // Nom unique pour la page
 
     // Configuration du carousel
     const settings = {
