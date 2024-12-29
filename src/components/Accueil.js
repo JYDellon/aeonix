@@ -12,7 +12,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 function Accueil() {
     const navigate = useNavigate();
     const { t } = useTranslation(); // Hook pour les traductions
-    const pageUrl  = 'accueil'; // Nom unique pour la page
+    const pageUrl  = accueil; // Nom unique pour la page
 
     // Configuration du carousel
     const settings = {
@@ -35,7 +35,7 @@ function Accueil() {
             if (!visitedPages[pageUrl ]) {
                 // Si non, envoyer la requête pour enregistrer la visite
                 const response = await axios.post(
-                    `https://api-aeonix.vercel.app/api/visit/${pageUrl }`,
+                    `https://api-aeonix.vercel.app/api/visit/${pageUrl} `,
 
 
                     {},
