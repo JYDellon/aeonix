@@ -28,39 +28,81 @@ function Accueil() {
 
     };
 
-    const recordVisit = async () => {
-        try {
-            // Vérifier si la page a déjà été enregistrée dans sessionStorage
-            const visitedPages = JSON.parse(sessionStorage.getItem('visitedPages')) || {};
-            if (!visitedPages[pageUrl ]) {
-                // Si non, envoyer la requête pour enregistrer la visite
-                const response = await axios.post(
-                    `https://api-aeonix.vercel.app/api/visit/${pageUrl} `,
+    // const recordVisit = async () => {
+    //     try {
+    //         // Vérifier si la page a déjà été enregistrée dans sessionStorage
+    //         const visitedPages = JSON.parse(sessionStorage.getItem('visitedPages')) || {};
+    //         if (!visitedPages[pageUrl ]) {
+    //             // Si non, envoyer la requête pour enregistrer la visite
+    //             const response = await axios.post(
+    //                 `https://api-aeonix.vercel.app/api/visit/${pageUrl} `,
 
 
-                    {},
-                    {
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                    }
-                );
+    //                 {},
+    //                 {
+    //                     headers: {
+    //                         'Content-Type': 'application/json',
+    //                     },
+    //                 }
+    //             );
 
-                console.log("Visite enregistrée avec succès :", response.data);
+    //             console.log("Visite enregistrée avec succès :", response.data);
 
-                // Ajouter cette page aux pages visitées dans sessionStorage
-                visitedPages[pageUrl ] = true;
-                sessionStorage.setItem('visitedPages', JSON.stringify(visitedPages));
-            } else {
-                console.log("La visite pour cette page a déjà été enregistrée pendant cette session.");
-            }
-        } catch (error) {
-            console.error("Erreur lors de l'enregistrement de la visite :", error);
-        }
-    };
+    //             // Ajouter cette page aux pages visitées dans sessionStorage
+    //             visitedPages[pageUrl ] = true;
+    //             sessionStorage.setItem('visitedPages', JSON.stringify(visitedPages));
+    //         } else {
+    //             console.log("La visite pour cette page a déjà été enregistrée pendant cette session.");
+    //         }
+    //     } catch (error) {
+    //         console.error("Erreur lors de l'enregistrement de la visite :", error);
+    //     }
+    // };
 
     // Enregistrer la visite lors du premier chargement de la page pour la session
     useEffect(() => {
+
+
+
+
+        const recordVisit = async () => {
+            try {
+                const visitedPages = JSON.parse(sessionStorage.getItem('visitedPages')) || {};
+                if (!visitedPages[pageUrl]) {
+                    const response = await axios.post(
+                        `https://api-aeonix.vercel.app/api/visit/${pageUrl}`,
+                        {},
+                        {
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                        }
+                    );
+                    console.log("Visite enregistrée avec succès :", response.data);
+        
+                    visitedPages[pageUrl] = true;
+                    sessionStorage.setItem('visitedPages', JSON.stringify(visitedPages));
+                } else {
+                    console.log("La visite pour cette page a déjà été enregistrée pendant cette session.");
+                }
+            } catch (error) {
+                console.error("Erreur lors de l'enregistrement de la visite :", {
+                    message: error.message,
+                    config: error.config,
+                    response: error.response,
+                });
+        
+                if (error.response) {
+                    console.error("Réponse API :", error.response.data);
+                }
+            }
+        };
+        
+
+
+
+
+
         recordVisit();
     }, []);
 
