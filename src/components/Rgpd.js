@@ -30,7 +30,7 @@
 //       const visitedPages = JSON.parse(sessionStorage.getItem('visitedPages')) || {};
 //       if (!visitedPages[pageUrl]) {
 //         // Si non, envoyer la requête pour enregistrer la visite
-//         const response = await axios.post('https://aeonixbackend.vercel.app/api/visit/rgpd', {}, {
+//         const response = await axios.post('https://api-aeonix.vercel.app/api/visit/rgpd', {}, {
 //           headers: {
 //             'Content-Type': 'application/json',
 //           },
@@ -140,7 +140,7 @@ function Rgpd() {
       const visitedPages = JSON.parse(sessionStorage.getItem('visitedPages')) || {};
       if (!visitedPages[pageUrl]) {
         // Si non, envoyer la requête pour enregistrer la visite
-        const response = await axios.post('https://aeonixbackend.vercel.app/api/visit/rgpd', {}, {
+        const response = await axios.post('https://api-aeonix.vercel.app/api/visit/rgpd', {}, {
           headers: {
             'Content-Type': 'application/json',
           },

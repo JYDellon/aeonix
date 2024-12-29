@@ -6,7 +6,7 @@ function VisitCounter() {
   // Fonction pour récupérer le compteur de visites
   const fetchVisitCount = async () => {
     try {
-        const response = axios.get('https://aeonixbackend.vercel.app/api/visit') // Assurez-vous que l'URL est correcte
+        const response = axios.get('https://api-aeonix.vercel.app/api/visit') // Assurez-vous que l'URL est correcte
         const text = await response.text(); // Utilisez .text() pour voir la réponse brute
         console.log("Réponse brute:", text); // Affichez la réponse brute pour déboguer
         
