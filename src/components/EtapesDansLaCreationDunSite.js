@@ -30,7 +30,7 @@
 //     useEffect(() => {
 //         const recordVisit = async () => {
 //             try {
-//                 const response = await axios.post('https://api-aeonix.vercel.app/api/visit/etapesCreationSite', {}, {
+//                 const response = await axios.post('https://aeonixbackend.vercel.app/api/visit/etapesCreationSite', {}, {
 //                     headers: {
 //                         'Content-Type': 'application/json',
 //                     },
@@ -144,7 +144,7 @@
 //                 if (!visitedPages[pageName]) {
 //                     // Si non, envoyer la requête pour enregistrer la visite
 //                     const response = await axios.post(
-//                         `https://api-aeonix.vercel.app/api/visit/${pageName}`,
+//                         `https://aeonixbackend.vercel.app/api/visit/${pageName}`,
 //                         {},
 //                         {
 //                             headers: {
@@ -247,7 +247,7 @@ function EtapesDansLaCreationDunSite() {
                 const visitedPages = JSON.parse(sessionStorage.getItem('visitedPages')) || {};
                 if (!visitedPages[pageName]) {
                     const response = await axios.post(
-                        `https://api-aeonix.vercel.app/api/visit/${pageName}`,
+                        `https://aeonixbackend.vercel.app/api/visit/${pageName}`,
                         {},
                         {
                             headers: {

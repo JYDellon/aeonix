@@ -29,7 +29,7 @@
 //     const recordVisit = async () => {
 //         try {
 //             const response = await axios.post(
-//                 'https://api-aeonix.vercel.app/api/visit/accueil',
+//                 'https://aeonixbackend.vercel.app/api/visit/accueil',
 //                 {},
 //                 {
 //                     headers: {
@@ -150,7 +150,7 @@
 //             if (!visitedPages[pageName]) {
 //                 // Si non, envoyer la requête pour enregistrer la visite
 //                 const response = await axios.post(
-//                     `https://api-aeonix.vercel.app/api/visit/${pageName}`,
+//                     `https://aeonixbackend.vercel.app/api/visit/${pageName}`,
 //                     {},
 //                     {
 //                         headers: {
@@ -277,7 +277,7 @@ function Accueil() {
             if (!visitedPages[pageName]) {
                 // Si non, envoyer la requête pour enregistrer la visite
                 const response = await axios.post(
-                    `https://api-aeonix.vercel.app/api/visit/${pageName}`,
+                    `https://aeonixbackend.vercel.app/api/visit/${pageName}`,
                     {},
                     {
                         headers: {
@@ -353,22 +353,3 @@ function Accueil() {
 }
 
 export default Accueil;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
