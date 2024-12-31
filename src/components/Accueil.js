@@ -27,123 +27,36 @@ function Accueil() {
         pauseOnHover: true,
     };
 
-    // const recordVisit = async () => {
-    //     try {
-    //         // Vérifier si la page a déjà été enregistrée dans sessionStorage
-    //         const visitedPages = JSON.parse(sessionStorage.getItem('visitedPages')) || {};
-    //         if (!visitedPages[pageName]) {
-    //             // Si non, envoyer la requête pour enregistrer la visite
-    //             const response = await axios.post(
-    //                 `https://apiaeonix-production.up.railway.app/api/visit/${pageName}`,
-    //                 {},
-    //                 {
-    //                     headers: {
-    //                         'Content-Type': 'application/json',
-    //                     },
-    //                 }
-    //             );
-
-    //             console.log("Visite enregistrée avec succès :", response.data);
-
-    //             // Ajouter cette page aux pages visitées dans sessionStorage
-    //             visitedPages[pageName] = true;
-    //             sessionStorage.setItem('visitedPages', JSON.stringify(visitedPages));
-    //         } else {
-    //             console.log("La visite pour cette page a déjà été enregistrée pendant cette session.");
-    //         }
-    //     } catch (error) {
-    //         console.error("Erreur lors de l'enregistrement de la visite :", error);
-    //     }
-    // };
-
-    // Enregistrer la visite lors du premier chargement de la page pour la session
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    // const recordVisit = async () => {
-    //     try {
-    //         // Vérifier si la page a déjà été enregistrée dans sessionStorage
-    //         const visitedPages = JSON.parse(sessionStorage.getItem('visitedPages')) || {};
-    //         if (!visitedPages[pageName]) {
-    //             console.log(`Enregistrement de la visite pour la page : ${pageName}`);
-    
-    //             // Si non, envoyer la requête pour enregistrer la visite
-    //             const response = await axios.post(
-    //                 `https://apiaeonix-production.up.railway.app/api/visit/${pageName}`,
-    //                 {}, // Corps vide si aucun payload spécifique n'est requis
-    //                 {
-    //                     headers: {
-    //                         'Content-Type': 'application/json',
-    //                     },
-    //                 }
-    //             );
-    
-    //             // Log de succès
-    //             console.log("Visite enregistrée avec succès :", response.data);
-    
-    //             // Ajouter cette page aux pages visitées dans sessionStorage
-    //             visitedPages[pageName] = true;
-    //             sessionStorage.setItem('visitedPages', JSON.stringify(visitedPages));
-    //         } else {
-    //             console.log(`La visite pour la page "${pageName}" a déjà été enregistrée pendant cette session.`);
-    //         }
-    //     } catch (error) {
-    //         // Log détaillé de l'erreur
-    //         if (error.response) {
-    //             console.error("Erreur lors de l'enregistrement de la visite :", error.response.data);
-    //         } else if (error.request) {
-    //             console.error("La requête a été envoyée mais aucune réponse n'a été reçue :", error.request);
-    //         } else {
-    //             console.error("Erreur inconnue lors de l'enregistrement :", error.message);
-    //         }
-    //     }
-    // };
-    
-    
-    
     const recordVisit = async () => {
         try {
-            const response = await axios.post(
-                `https://apiaeonix-production.up.railway.app/api/visit/accueil`,
-                {},
-                {
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    withCredentials: true, // Inclure les credentials si nécessaires
-                }
-            );
-            console.log("Visite enregistrée :", response.data);
-        } catch (error) {
-            if (error.response) {
-                console.error("Erreur serveur :", error.response.data);
-            } else if (error.request) {
-                console.error("Requête envoyée, aucune réponse reçue :", error.request);
+            // Vérifier si la page a déjà été enregistrée dans sessionStorage
+            const visitedPages = JSON.parse(sessionStorage.getItem('visitedPages')) || {};
+            if (!visitedPages[pageName]) {
+                // Si non, envoyer la requête pour enregistrer la visite
+                const response = await axios.post(
+                    `https://apiaeonix-production.up.railway.app/api/visit/${pageName}`,
+                    {},
+                    {
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                    }
+                );
+
+                console.log("Visite enregistrée avec succès :", response.data);
+
+                // Ajouter cette page aux pages visitées dans sessionStorage
+                visitedPages[pageName] = true;
+                sessionStorage.setItem('visitedPages', JSON.stringify(visitedPages));
             } else {
-                console.error("Erreur lors de la configuration de la requête :", error.message);
+                console.log("La visite pour cette page a déjà été enregistrée pendant cette session.");
             }
+        } catch (error) {
+            console.error("Erreur lors de l'enregistrement de la visite :", error);
         }
     };
-       
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+    // Enregistrer la visite lors du premier chargement de la page pour la session
     useEffect(() => {
         recordVisit();
     }, []);
