@@ -47,12 +47,12 @@ function Dashboard() {
   //   }
   // }, [activeTab]);
 
-  // const fetchProspects = () => {
-  //   axios
-  //     .get('https://apiaeonix-production.up.railway.app/api/prospects')
-  //     .then((response) => setProspects(response.data))
-  //     .catch((error) => console.error('Erreur lors de la récupération des prospects:', error));
-  // };
+  const fetchProspects = () => {
+    axios
+      .get('https://apiaeonix-production.up.railway.app/api/prospects')
+      .then((response) => setProspects(response.data))
+      .catch((error) => console.error('Erreur lors de la récupération des prospects:', error));
+  };
 
 
 
