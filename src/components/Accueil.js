@@ -27,38 +27,90 @@ function Accueil() {
         pauseOnHover: true,
     };
 
-    const recordVisit = async () => {
-        try {
-            // Vérifier si la page a déjà été enregistrée dans sessionStorage
-            const visitedPages = JSON.parse(sessionStorage.getItem('visitedPages')) || {};
-            if (!visitedPages[pageName]) {
-                // Si non, envoyer la requête pour enregistrer la visite
-                const response = await axios.post(
-                    `https://apiaeonix-production.up.railway.app/api/visit/${pageName}`,
-                    {},
-                    {
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                    }
-                );
+    // const recordVisit = async () => {
+    //     try {
+    //         // Vérifier si la page a déjà été enregistrée dans sessionStorage
+    //         const visitedPages = JSON.parse(sessionStorage.getItem('visitedPages')) || {};
+    //         if (!visitedPages[pageName]) {
+    //             // Si non, envoyer la requête pour enregistrer la visite
+    //             const response = await axios.post(
+    //                 `https://apiaeonix-production.up.railway.app/api/visit/${pageName}`,
+    //                 {},
+    //                 {
+    //                     headers: {
+    //                         'Content-Type': 'application/json',
+    //                     },
+    //                 }
+    //             );
 
-                console.log("Visite enregistrée avec succès :", response.data);
+    //             console.log("Visite enregistrée avec succès :", response.data);
 
-                // Ajouter cette page aux pages visitées dans sessionStorage
-                visitedPages[pageName] = true;
-                sessionStorage.setItem('visitedPages', JSON.stringify(visitedPages));
-            } else {
-                console.log("La visite pour cette page a déjà été enregistrée pendant cette session.");
-            }
-        } catch (error) {
-            console.error("Erreur lors de l'enregistrement de la visite :", error);
-        }
-    };
+    //             // Ajouter cette page aux pages visitées dans sessionStorage
+    //             visitedPages[pageName] = true;
+    //             sessionStorage.setItem('visitedPages', JSON.stringify(visitedPages));
+    //         } else {
+    //             console.log("La visite pour cette page a déjà été enregistrée pendant cette session.");
+    //         }
+    //     } catch (error) {
+    //         console.error("Erreur lors de l'enregistrement de la visite :", error);
+    //     }
+    // };
+
+
+
+// Fonction pour enregistrer une visite
+function recordVisit(pageName) {
+    // Vérifier si la page a déjà été enregistrée dans sessionStorage
+    const visitedPages = JSON.parse(sessionStorage.getItem('visitedPages')) || {};
+    if (!visitedPages[pageName]) {
+        // Si non, envoyer la requête pour enregistrer la visite via JSONP
+        const script = document.createElement('script');
+        script.src = `https://apiaeonix-production.up.railway.app/api/visit/${pageName}?callback=handleVisitResponse`;
+        document.body.appendChild(script);
+
+        // Ajouter cette page aux pages visitées dans sessionStorage
+        visitedPages[pageName] = true;
+        sessionStorage.setItem('visitedPages', JSON.stringify(visitedPages));
+    } else {
+        console.log("La visite pour cette page a déjà été enregistrée pendant cette session.");
+    }
+}
+
+// Fonction de callback JSONP
+function handleVisitResponse(response) {
+    console.log("Visite enregistrée avec succès :", response);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     // Enregistrer la visite lors du premier chargement de la page pour la session
     useEffect(() => {
-        recordVisit();
+        
+// Utilisation de la fonction
+    recordVisit('accueil');
     }, []);
 
     return (
