@@ -1,71 +1,7 @@
-// import React, { useState, useEffect } from 'react';
-// import { Link, useLocation } from 'react-router-dom';
-// import axios from 'axios';
-// import { useTranslation } from 'react-i18next'; // Importez le hook
-// import './Navbar.css';
-
-// function Navbar({ onLinkClick }) {
-//   const location = useLocation();
-//   const { t } = useTranslation(); // Utilisez le hook pour accéder aux traductions
-//   const [isMenuOpen, setIsMenuOpen] = useState(false);
-//   const [isPersonalPc, setIsPersonalPc] = useState(false);
-
-//   // Votre IP publique (à personnaliser)
-//   const personalPcIp = '109.9.43.34';
-
-//   const isActiveLink = (path) => location.pathname === path;
-//   const [isModalOpen, setIsModalOpen] = useState(false);
-
-//   const toggleMenu = () => {
-//     setIsMenuOpen((prev) => !prev);
-//   };
-
-//   const closeMenu = () => {
-//     setIsMenuOpen(false);
-//     if (onLinkClick) {
-//       onLinkClick();
-//     }
-//   };
-
-//   const openModal = () => {
-//     setIsModalOpen(true);
-//   };
-
-//   const closeModal = () => {
-//     setIsModalOpen(false);
-//   };
-
-//   // Vérifie l'adresse IP et met à jour l'état
-//   useEffect(() => {
-//     axios
-//       .get('https://api.ipify.org/?format=json')
-//       .then((response) => {
-//         const clientIp = response.data.ip;
-//         setIsPersonalPc(clientIp === personalPcIp);
-//       })
-//       .catch((error) =>
-//         console.error('Erreur lors de la récupération de l\'IP:', error)
-//       );
-//   }, []);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import axios from 'axios';
-import { useTranslation } from 'react-i18next'; // Importez le hook pour la traduction
+import { useTranslation } from 'react-i18next'; // Importez le hook
 import './Navbar.css';
 
 function Navbar({ onLinkClick }) {
@@ -74,8 +10,8 @@ function Navbar({ onLinkClick }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isPersonalPc, setIsPersonalPc] = useState(false);
 
-  // L'adresse IP locale à comparer
-  const personalPcLocalIp = '192.168.1.100'; // Remplacez par l'IP locale de votre machine
+  // Votre IP publique (à personnaliser)
+  const personalPcIp = '109.9.43.34';
 
   const isActiveLink = (path) => location.pathname === path;
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -99,62 +35,18 @@ function Navbar({ onLinkClick }) {
     setIsModalOpen(false);
   };
 
-  // Vérifie l'adresse IP locale et met à jour l'état
-  // useEffect(() => {
-  //   axios
-  //     .get('https://apiaeonix-production.up.railway.app/api/get-ip') // L'URL de votre backend Symfony
-  //     .then((response) => {
-  //       const clientIp = response.data.ip;
-  //       setIsPersonalPc(clientIp === personalPcLocalIp); // Compare l'IP locale à celle de votre machine
-  //     })
-  //     .catch((error) => {
-  //       console.error('Erreur lors de la récupération de l\'IP locale:', error);
-  //     });
-  // }, []);
-
-
-
-
+  // Vérifie l'adresse IP et met à jour l'état
   useEffect(() => {
     axios
-      .get('https://apiaeonix-production.up.railway.app/api/get-ip') // L'URL de votre API Symfony en production
+      .get('https://api.ipify.org/?format=json')
       .then((response) => {
         const clientIp = response.data.ip;
-        setIsPersonalPc(clientIp === personalPcLocalIp); // Compare l'IP locale à celle de votre machine
+        setIsPersonalPc(clientIp === personalPcIp);
       })
-      .catch((error) => {
-        console.error('Erreur lors de la récupération de l\'IP locale:', error);
-      });
+      .catch((error) =>
+        console.error('Erreur lors de la récupération de l\'IP:', error)
+      );
   }, []);
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   return (
     <div className="navbar-container">
