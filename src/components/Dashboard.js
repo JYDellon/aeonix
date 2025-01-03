@@ -37,7 +37,7 @@ function Dashboard() {
   useEffect(() => {
     if (activeTab === 'visits') {
       axios
-        .get('https://apiaeonix-production.up.railway.app/api/visit')
+        .get('https://apiaeonix-production-3187.up.railway.app/api/visit')
         .then((response) => {
           setPageVisits(response.data.filter((visit) => visit.pageUrl !== '/dashboard'));
         })
@@ -49,32 +49,14 @@ function Dashboard() {
 
   const fetchProspects = () => {
     axios
-      .get('https://apiaeonix-production.up.railway.app/api/prospects')
+      .get('https://apiaeonix-production-3187.up.railway.app/api/prospects')
       .then((response) => setProspects(response.data))
       .catch((error) => console.error('Erreur lors de la récupération des prospects:', error));
   };
 
-
-
-
-
-  const handleVisitsResponse = (response) => {
-    console.log("Données des visites récupérées :", response);
-    setPageVisits(response.filter((visit) => visit.pageUrl !== '/dashboard'));
-};
-
-
-
-
-
-
-
-
-
-
   const handleCreateProspect = () => {
     axios
-      .post('https://apiaeonix-production.up.railway.app/api/prospects', newProspect)
+      .post('https://apiaeonix-production-3187.up.railway.app/api/prospects', newProspect)
       .then(() => {
         fetchProspects();
         setShowCreateForm(false);
@@ -86,7 +68,7 @@ function Dashboard() {
   const handleUpdateProspect = () => {
     if (editingProspect) {
       axios
-        .put(`https://apiaeonix-production.up.railway.app/api/prospect/${editingProspect.id}`, editingProspect)
+        .put(`https://apiaeonix-production-3187.up.railway.app/api/prospect/${editingProspect.id}`, editingProspect)
         .then(() => {
           fetchProspects();
           setEditingProspect(null);
@@ -102,7 +84,7 @@ function Dashboard() {
     }
 
     axios
-      .post('https://apiaeonix-production.up.railway.app/api/prospects/delete', { ids: selectedProspects })
+      .post('https://apiaeonix-production-3187.up.railway.app/api/prospects/delete', { ids: selectedProspects })
       .then(() => {
         alert('Prospects supprimés avec succès.');
         fetchProspects();
@@ -145,7 +127,7 @@ function Dashboard() {
         }))
       );
 
-      await axios.post('https://apiaeonix-production.up.railway.app/api/send-emails', {
+      await axios.post('https://apiaeonix-production-3187.up.railway.app/api/send-emails', {
         recipients: selectedProspectsData.map((prospect) => prospect.email),
         subject: emailSubject,
         body: emailBody,
@@ -442,19 +424,3 @@ function Dashboard() {
 }
 
 export default Dashboard;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -27,68 +27,32 @@ function Accueil() {
         pauseOnHover: true,
     };
 
-    // const recordVisit = async () => {
-    //     try {
-    //         // Vérifier si la page a déjà été enregistrée dans sessionStorage
-    //         const visitedPages = JSON.parse(sessionStorage.getItem('visitedPages')) || {};
-    //         if (!visitedPages[pageName]) {
-    //             // Si non, envoyer la requête pour enregistrer la visite
-    //             const response = await axios.post(
-    //                 `https://apiaeonix-production.up.railway.app/api/visit/${pageName}`,
-    //                 {},
-    //                 {
-    //                     headers: {
-    //                         'Content-Type': 'application/json',
-    //                     },
-    //                 }
-    //             );
+    const recordVisit = async () => {
+        try {
+            // Vérifier si la page a déjà été enregistrée dans sessionStorage
+            const visitedPages = JSON.parse(sessionStorage.getItem('visitedPages')) || {};
+            if (!visitedPages[pageName]) {
+                // Si non, envoyer la requête pour enregistrer la visite
+                const response = await axios.post(
+                    `https://apiaeonix-production-3187.up.railway.app/api/visit/${pageName}`,
+                    {},
+                    {
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                    }
+                );
 
-    //             console.log("Visite enregistrée avec succès :", response.data);
-
-    //             // Ajouter cette page aux pages visitées dans sessionStorage
-    //             visitedPages[pageName] = true;
-    //             sessionStorage.setItem('visitedPages', JSON.stringify(visitedPages));
-    //         } else {
-    //             console.log("La visite pour cette page a déjà été enregistrée pendant cette session.");
-    //         }
-    //     } catch (error) {
-    //         console.error("Erreur lors de l'enregistrement de la visite :", error);
-    //     }
-    // };
-
-    // // Enregistrer la visite lors du premier chargement de la page pour la session
-    // useEffect(() => {
-    //     recordVisit();
-    // }, []);
-
-
-    const recordVisit = () => {
-        // Vérifier si la page a déjà été enregistrée dans sessionStorage
-        const visitedPages = JSON.parse(sessionStorage.getItem('visitedPages')) || {};
-        if (!visitedPages[pageName]) {
-            // Si non, envoyer la requête JSONP
-            const callbackName = 'handleVisitResponse'; // Nom de la fonction de callback
-
-            // Créer un script dynamique pour effectuer la requête JSONP
-            const script = document.createElement('script');
-            script.src = `https://apiaeonix-production.up.railway.app/api/visit/${pageName}?callback=${callbackName}`;
-            document.body.appendChild(script);
-
-            // Cette fonction sera appelée lors de la réception de la réponse
-            window[callbackName] = (response) => {
-                console.log("Visite enregistrée avec succès :", response);
+                console.log("Visite enregistrée avec succès :", response.data);
 
                 // Ajouter cette page aux pages visitées dans sessionStorage
                 visitedPages[pageName] = true;
                 sessionStorage.setItem('visitedPages', JSON.stringify(visitedPages));
-            };
-
-            // Nettoyer le script après utilisation
-            script.onload = () => {
-                document.body.removeChild(script);
-            };
-        } else {
-            console.log("La visite pour cette page a déjà été enregistrée pendant cette session.");
+            } else {
+                console.log("La visite pour cette page a déjà été enregistrée pendant cette session.");
+            }
+        } catch (error) {
+            console.error("Erreur lors de l'enregistrement de la visite :", error);
         }
     };
 
@@ -96,8 +60,6 @@ function Accueil() {
     useEffect(() => {
         recordVisit();
     }, []);
-
-
 
     return (
         <>

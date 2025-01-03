@@ -331,7 +331,7 @@ const handleSuivant = (e) => {
   //   };
   
   //   try {
-  //     const response = await fetch('https://apiaeonix-production.up.railway.app/api/devis', {
+  //     const response = await fetch('https://apiaeonix-production-3187.up.railway.app/api/devis', {
   //       method: 'POST',
   //       headers: {
   //         'Content-Type': 'application/json',
@@ -436,7 +436,7 @@ const handleSuivant = (e) => {
         };
 
         // Envoyer l'email via l'API
-        const response = await fetch('https://apiaeonix-production.up.railway.app/api/devis', {
+        const response = await fetch('https://apiaeonix-production-3187.up.railway.app/api/devis', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

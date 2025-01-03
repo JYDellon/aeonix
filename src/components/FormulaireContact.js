@@ -34,7 +34,7 @@
 //     setError(null);
 //     try {
 
-//       const response = await fetch('https://apiaeonix-production.up.railway.app/api/contact', {
+//       const response = await fetch('https://apiaeonix-production-3187.up.railway.app/api/contact', {
 //         method: 'POST',
 //         headers: {
 //             'Content-Type': 'application/json',
@@ -216,7 +216,7 @@
 //     setIsSubmitting(true);
 //     setError(null);
 //     try {
-//       const response = await fetch('https://apiaeonix-production.up.railway.app/api/contact', {
+//       const response = await fetch('https://apiaeonix-production-3187.up.railway.app/api/contact', {
 //         method: 'POST',
 //         headers: {
 //           'Content-Type': 'application/json',
@@ -394,7 +394,7 @@ const FormulaireContact = ({ onClose }) => {
     setIsSubmitting(true);
     setError(null);
     try {
-      const response = await fetch('https://apiaeonix-production.up.railway.app/api/contact', {
+      const response = await fetch('https://apiaeonix-production-3187.up.railway.app/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
