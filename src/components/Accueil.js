@@ -81,37 +81,11 @@ function handleVisitResponse(response) {
     console.log("Visite enregistrée avec succès :", response);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // Enregistrer la visite lors du premier chargement de la page pour la session
-    useEffect(() => {
-        
-// Utilisation de la fonction
+// Enregistrer la visite lors du premier chargement de la page pour la session
+useEffect(() => {
     recordVisit('accueil');
-    }, []);
+}, []);
+
 
     return (
         <>
