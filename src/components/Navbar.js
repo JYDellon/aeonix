@@ -12,7 +12,43 @@ function Navbar({ onLinkClick }) {
 
   // Votre IP publique (à personnaliser)
   // const personalPcIp = '109.9.43.34';
-  const personalPcIp = '77.128.153.72';
+  // const personalPcIp = '77.128.153.72';
+
+
+
+
+
+
+
+
+  // Identifiant unique pour votre machine dans l'environnement de développement
+  const personalMachineId = process.env.REACT_APP_PERSONAL_PC_ID; // Lecture de la variable d'environnement
+
+  // Vérifie si la clé correspond à celle de votre machine
+  const checkIfPersonalMachine = () => {
+    if (personalMachineId === 'unique_machine_identifier') {
+      setIsPersonalPc(true);
+    } else {
+      setIsPersonalPc(false);
+    }
+  };
+
+  // Appel de la fonction au démarrage de l'application
+  useEffect(() => {
+    checkIfPersonalMachine();
+  }, []);
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   const isActiveLink = (path) => location.pathname === path;
