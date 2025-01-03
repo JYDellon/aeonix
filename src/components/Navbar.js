@@ -74,8 +74,8 @@ function Navbar({ onLinkClick }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isPersonalPc, setIsPersonalPc] = useState(false);
 
-  // L'adresse IP locale à comparer (remplacez-la par l'IP de votre machine)
-  const personalPcLocalIp = '192.168.1.100'; // Remplacez par l'IP locale de votre PC
+  // L'adresse IP locale à comparer
+  const personalPcLocalIp = '192.168.1.100'; // Remplacez par l'IP locale de votre machine
 
   const isActiveLink = (path) => location.pathname === path;
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -101,10 +101,8 @@ function Navbar({ onLinkClick }) {
 
   // Vérifie l'adresse IP locale et met à jour l'état
   useEffect(() => {
-    // Si l'adresse IP locale peut être récupérée depuis un service API, on peut l'utiliser
-    // Sinon, il faut se baser sur un service comme WebRTC ou un serveur backend
     axios
-      .get('http://localhost:3001/get-ip') // Assurez-vous que l'API backend pour récupérer l'IP locale est bien en place
+      .get('https://apiaeonix-production.up.railway.app/api/get-ip') // L'URL de votre backend Symfony
       .then((response) => {
         const clientIp = response.data.ip;
         setIsPersonalPc(clientIp === personalPcLocalIp); // Compare l'IP locale à celle de votre machine
