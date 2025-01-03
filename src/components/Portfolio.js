@@ -11,83 +11,34 @@ function Portfolio() {
   const pageName = 'portfolio'; // Nom unique pour cette page
 
   // Fonction pour enregistrer une visite
-  // const recordVisit = async () => {
-  //   try {
-  //     const visitedPages = JSON.parse(sessionStorage.getItem('visitedPages')) || {};
-  //     if (!visitedPages[pageName]) {
-  //       const response = await axios.post(
-  //         'https://apiaeonix-production.up.railway.app/api/visit/portfolio',
-  //         {},
-  //         {
-  //           headers: {
-  //             'Content-Type': 'application/json',
-  //           }
-  //         }
-  //       );
-  //       console.log("Visite enregistrée avec succès", response.data);
+  const recordVisit = async () => {
+    try {
+      const visitedPages = JSON.parse(sessionStorage.getItem('visitedPages')) || {};
+      if (!visitedPages[pageName]) {
+        const response = await axios.post(
+          'https://apiaeonix-production.up.railway.app/api/visit/portfolio',
+          {},
+          {
+            headers: {
+              'Content-Type': 'application/json',
+            }
+          }
+        );
+        console.log("Visite enregistrée avec succès", response.data);
 
-  //       visitedPages[pageName] = true;
-  //       sessionStorage.setItem('visitedPages', JSON.stringify(visitedPages));
-  //     } else {
-  //       console.log("La visite pour cette page a déjà été enregistrée pendant cette session.");
-  //     }
-  //   } catch (error) {
-  //     console.error("Erreur lors de l'enregistrement de la visite :", error);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   recordVisit();
-  // }, []); // Le tableau vide garantit que cela ne se déclenche qu'une fois au premier rendu
-
-
-
-
-
-
-
-
-
-
-
-
-  const recordVisit = (pageName) => {
-    // Vérifier si la page a déjà été enregistrée dans sessionStorage
-    const visitedPages = JSON.parse(sessionStorage.getItem('visitedPages')) || {};
-    if (!visitedPages[pageName]) {
-      // Si non, envoyer la requête pour enregistrer la visite via JSONP
-      const script = document.createElement('script');
-      script.src = `https://apiaeonix-production.up.railway.app/api/visit/${pageName}?callback=handleVisitResponse`;
-      document.body.appendChild(script);
-
-      // Ajouter cette page aux pages visitées dans sessionStorage
-      visitedPages[pageName] = true;
-      sessionStorage.setItem('visitedPages', JSON.stringify(visitedPages));
-    } else {
-      console.log("La visite pour cette page a déjà été enregistrée pendant cette session.");
+        visitedPages[pageName] = true;
+        sessionStorage.setItem('visitedPages', JSON.stringify(visitedPages));
+      } else {
+        console.log("La visite pour cette page a déjà été enregistrée pendant cette session.");
+      }
+    } catch (error) {
+      console.error("Erreur lors de l'enregistrement de la visite :", error);
     }
   };
 
-  // Fonction de callback JSONP
-  const handleVisitResponse = (response) => {
-    console.log("Visite enregistrée avec succès :", response);
-  };
-
-  // Enregistrer la visite lors du chargement de la page
   useEffect(() => {
-    const pageName = 'portfolio';
-    recordVisit(pageName);
+    recordVisit();
   }, []); // Le tableau vide garantit que cela ne se déclenche qu'une fois au premier rendu
-
-
-
-
-
-
-
-
-
-
 
   return (
     <div className="portfolio-container">

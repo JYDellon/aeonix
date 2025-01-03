@@ -18,71 +18,36 @@ const NosServices = () => {
   const pageName = 'nos-services';
 
   // Fonction pour enregistrer la visite
-  // const recordVisit = async () => {
-  //   try {
-  //     const visitedPages = JSON.parse(sessionStorage.getItem('visitedPages')) || {};
-  //     if (!visitedPages[pageName]) {
-  //       const response = await axios.post(
-  //         `https://apiaeonix-production.up.railway.app/api/visit/${pageName}`,
-  //         {},
-  //         {
-  //           headers: {
-  //             'Content-Type': 'application/json',
-  //           },
-  //         }
-  //       );
-  //       console.log("Visite enregistrée avec succès", response.data);
+  const recordVisit = async () => {
+    try {
+      const visitedPages = JSON.parse(sessionStorage.getItem('visitedPages')) || {};
+      if (!visitedPages[pageName]) {
+        const response = await axios.post(
+          `https://apiaeonix-production.up.railway.app/api/visit/${pageName}`,
+          {},
+          {
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          }
+        );
+        console.log("Visite enregistrée avec succès", response.data);
 
-  //       visitedPages[pageName] = true;
-  //       sessionStorage.setItem('visitedPages', JSON.stringify(visitedPages));
-  //     } else {
-  //       console.log("La visite pour cette page a déjà été enregistrée pendant cette session.");
-  //     }
-  //   } catch (error) {
-  //     console.error("Erreur lors de l'enregistrement de la visite :", error);
-  //   }
-  // };
-
-  // // Enregistrement de la visite au chargement du composant
-  // useEffect(() => {
-  //   recordVisit();
-  // }, []);
-
-
-
-
-  const recordVisit = (pageName) => {
-    // Vérifier si la page a déjà été enregistrée dans sessionStorage
-    const visitedPages = JSON.parse(sessionStorage.getItem('visitedPages')) || {};
-    if (!visitedPages[pageName]) {
-      // Si non, envoyer la requête pour enregistrer la visite via JSONP
-      const script = document.createElement('script');
-      script.src = `https://apiaeonix-production.up.railway.app/api/visit/${pageName}?callback=handleVisitResponse`;
-      document.body.appendChild(script);
-
-      // Ajouter cette page aux pages visitées dans sessionStorage
-      visitedPages[pageName] = true;
-      sessionStorage.setItem('visitedPages', JSON.stringify(visitedPages));
-    } else {
-      console.log("La visite pour cette page a déjà été enregistrée pendant cette session.");
+        visitedPages[pageName] = true;
+        sessionStorage.setItem('visitedPages', JSON.stringify(visitedPages));
+      } else {
+        console.log("La visite pour cette page a déjà été enregistrée pendant cette session.");
+      }
+    } catch (error) {
+      console.error("Erreur lors de l'enregistrement de la visite :", error);
     }
-  };
-
-  // Fonction de callback JSONP
-  const handleVisitResponse = (response) => {
-    console.log("Visite enregistrée avec succès :", response);
   };
 
   // Enregistrement de la visite au chargement du composant
   useEffect(() => {
-    recordVisit(pageName);
+    recordVisit();
   }, []);
 
-
-
-
-
-  
   return (
     <>
       <div className="intro-textNosServices">

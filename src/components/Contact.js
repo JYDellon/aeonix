@@ -14,72 +14,38 @@ function Contact() {
     const pageName = 'contact'; // Nom unique de la page
 
     // Fonction pour enregistrer une visite
-    // const recordVisit = async () => {
-    //     try {
-    //         // Vérifier si la page a déjà été enregistrée dans sessionStorage
-    //         const visitedPages = JSON.parse(sessionStorage.getItem('visitedPages')) || {};
-    //         if (!visitedPages[pageName]) {
-    //             // Si non, envoyer la requête pour enregistrer la visite
-    //             const response = await axios.post(
-    //                 `https://apiaeonix-production.up.railway.app/api/visit/${pageName}`,
-    //                 {},
-    //                 {
-    //                     headers: {
-    //                         'Content-Type': 'application/json',
-    //                     },
-    //                 }
-    //             );
-    //             console.log("Visite enregistrée avec succès :", response.data);
-
-    //             // Ajouter cette page aux pages visitées dans sessionStorage
-    //             visitedPages[pageName] = true;
-    //             sessionStorage.setItem('visitedPages', JSON.stringify(visitedPages));
-    //         } else {
-    //             console.log("La visite pour cette page a déjà été enregistrée pendant cette session.");
-    //         }
-    //     } catch (error) {
-    //         console.error("Erreur lors de l'enregistrement de la visite :", error);
-    //     }
-    // };
-
-
-
     const recordVisit = async () => {
-        const visitedPages = JSON.parse(sessionStorage.getItem('visitedPages')) || {};
-        
-        if (!visitedPages[pageName]) {
-            const script = document.createElement('script');
-            script.src = `https://apiaeonix-production.up.railway.app/api/visit/${pageName}?callback=handleVisitResponse`;
-            document.body.appendChild(script);
-    
-            // Ajouter la page à la sessionStorage
-            visitedPages[pageName] = true;
-            sessionStorage.setItem('visitedPages', JSON.stringify(visitedPages));
-        } else {
-            console.log("La visite pour cette page a déjà été enregistrée pendant cette session.");
+        try {
+            // Vérifier si la page a déjà été enregistrée dans sessionStorage
+            const visitedPages = JSON.parse(sessionStorage.getItem('visitedPages')) || {};
+            if (!visitedPages[pageName]) {
+                // Si non, envoyer la requête pour enregistrer la visite
+                const response = await axios.post(
+                    `https://apiaeonix-production.up.railway.app/api/visit/${pageName}`,
+                    {},
+                    {
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                    }
+                );
+                console.log("Visite enregistrée avec succès :", response.data);
+
+                // Ajouter cette page aux pages visitées dans sessionStorage
+                visitedPages[pageName] = true;
+                sessionStorage.setItem('visitedPages', JSON.stringify(visitedPages));
+            } else {
+                console.log("La visite pour cette page a déjà été enregistrée pendant cette session.");
+            }
+        } catch (error) {
+            console.error("Erreur lors de l'enregistrement de la visite :", error);
         }
     };
-    
-    // Fonction de callback JSONP
-    function handleVisitResponse(response) {
-        console.log("Visite enregistrée avec succès :", response);
-    }
 
-    
-
-
-    // // Enregistrer la visite lors du premier chargement de la page pour la session
-    // useEffect(() => {
-    //     recordVisit();
-    // }, []);
-
-
+    // Enregistrer la visite lors du premier chargement de la page pour la session
     useEffect(() => {
-        // Enregistrer la visite lors du premier chargement du composant
         recordVisit();
-    }, []); // Le tableau vide [] signifie que l'effet ne sera exécuté qu'une seule fois (au montage)
-    
-
+    }, []);
 
     // Gérer le bouton "Retour en haut"
     useEffect(() => {

@@ -34,18 +34,18 @@ function Dashboard() {
   }, [showCreateForm, editingProspect, showEmailModal]);
   
 
-  // useEffect(() => {
-  //   if (activeTab === 'visits') {
-  //     axios
-  //       .get('https://apiaeonix-production.up.railway.app/api/visit')
-  //       .then((response) => {
-  //         setPageVisits(response.data.filter((visit) => visit.pageUrl !== '/dashboard'));
-  //       })
-  //       .catch((error) => console.error('Erreur lors de la récupération des visites:', error));
-  //   } else if (activeTab === 'prospects') {
-  //     fetchProspects();
-  //   }
-  // }, [activeTab]);
+  useEffect(() => {
+    if (activeTab === 'visits') {
+      axios
+        .get('https://apiaeonix-production.up.railway.app/api/visit')
+        .then((response) => {
+          setPageVisits(response.data.filter((visit) => visit.pageUrl !== '/dashboard'));
+        })
+        .catch((error) => console.error('Erreur lors de la récupération des visites:', error));
+    } else if (activeTab === 'prospects') {
+      fetchProspects();
+    }
+  }, [activeTab]);
 
   const fetchProspects = () => {
     axios
@@ -53,23 +53,6 @@ function Dashboard() {
       .then((response) => setProspects(response.data))
       .catch((error) => console.error('Erreur lors de la récupération des prospects:', error));
   };
-
-
-
-
-
-
-  useEffect(() => {
-    if (activeTab === 'visits') {
-        // Si vous récupérez les visites via JSONP, ajustez ici également.
-        const script = document.createElement('script');
-        script.src = 'https://apiaeonix-production.up.railway.app/api/visit?callback=handleVisitsResponse';  // L'URL avec le paramètre callback
-        document.body.appendChild(script);
-    } else if (activeTab === 'prospects') {
-        fetchProspects();
-    }
-}, [activeTab]);
-
 
 
 
