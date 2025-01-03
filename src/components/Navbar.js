@@ -1,57 +1,122 @@
+// import React, { useState, useEffect } from 'react';
+// import { Link, useLocation } from 'react-router-dom';
+// import axios from 'axios';
+// import { useTranslation } from 'react-i18next'; // Importez le hook
+// import './Navbar.css';
+
+// function Navbar({ onLinkClick }) {
+//   const location = useLocation();
+//   const { t } = useTranslation(); // Utilisez le hook pour accéder aux traductions
+//   const [isMenuOpen, setIsMenuOpen] = useState(false);
+//   const [isPersonalPc, setIsPersonalPc] = useState(false);
+
+//   // Votre IP publique (à personnaliser)
+//   // const personalPcIp = '109.9.43.34';
+//   // const personalPcIp = '77.128.153.72';
+
+
+
+
+
+
+
+
+//   // Identifiant unique pour votre machine dans l'environnement de développement
+//   const personalMachineId = process.env.REACT_APP_PERSONAL_PC_ID; // Lecture de la variable d'environnement
+
+//   // Vérifie si la clé correspond à celle de votre machine
+//   const checkIfPersonalMachine = () => {
+//     if (personalMachineId === 'unique_machine_identifier') {
+//       setIsPersonalPc(true);
+//     } else {
+//       setIsPersonalPc(false);
+//     }
+//   };
+
+//   // Appel de la fonction au démarrage de l'application
+//   useEffect(() => {
+//     checkIfPersonalMachine();
+//   }, []);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   const isActiveLink = (path) => location.pathname === path;
+//   const [isModalOpen, setIsModalOpen] = useState(false);
+
+//   const toggleMenu = () => {
+//     setIsMenuOpen((prev) => !prev);
+//   };
+
+//   const closeMenu = () => {
+//     setIsMenuOpen(false);
+//     if (onLinkClick) {
+//       onLinkClick();
+//     }
+//   };
+
+//   const openModal = () => {
+//     setIsModalOpen(true);
+//   };
+
+//   const closeModal = () => {
+//     setIsModalOpen(false);
+//   };
+
+//   // Vérifie l'adresse IP et met à jour l'état
+//   useEffect(() => {
+//     axios
+//       .get('https://api.ipify.org/?format=json')
+//       .then((response) => {
+//         const clientIp = response.data.ip;
+//         setIsPersonalPc(clientIp === personalPcIp);
+//       })
+//       .catch((error) =>
+//         console.error('Erreur lors de la récupération de l\'IP:', error)
+//       );
+//   }, []);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import axios from 'axios';
-import { useTranslation } from 'react-i18next'; // Importez le hook
+import { useTranslation } from 'react-i18next'; 
 import './Navbar.css';
 
 function Navbar({ onLinkClick }) {
   const location = useLocation();
-  const { t } = useTranslation(); // Utilisez le hook pour accéder aux traductions
+  const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isPersonalPc, setIsPersonalPc] = useState(false);
-
-  // Votre IP publique (à personnaliser)
-  // const personalPcIp = '109.9.43.34';
-  // const personalPcIp = '77.128.153.72';
-
-
-
-
-
-
-
-
-  // Identifiant unique pour votre machine dans l'environnement de développement
-  const personalMachineId = process.env.REACT_APP_PERSONAL_PC_ID; // Lecture de la variable d'environnement
-
-  // Vérifie si la clé correspond à celle de votre machine
-  const checkIfPersonalMachine = () => {
-    if (personalMachineId === '8e928ce6ea9f6255a74cbbdd664820d0') {
-      setIsPersonalPc(true);
-    } else {
-      setIsPersonalPc(false);
-    }
-  };
-
-  // Appel de la fonction au démarrage de l'application
-  useEffect(() => {
-    checkIfPersonalMachine();
-  }, []);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  const isActiveLink = (path) => location.pathname === path;
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -73,19 +138,43 @@ function Navbar({ onLinkClick }) {
     setIsModalOpen(false);
   };
 
-  // Vérifie l'adresse IP et met à jour l'état
+  // Identifiant unique pour votre machine dans l'environnement de développement
+  const personalMachineId = process.env.REACT_APP_PERSONAL_PC_ID; // Lecture de la variable d'environnement
+
+  // Vérifie si la clé correspond à celle de votre machine
+  const checkIfPersonalMachine = () => {
+    if (personalMachineId === 'unique_machine_identifier') {
+      setIsPersonalPc(true);
+    } else {
+      setIsPersonalPc(false);
+    }
+  };
+
+  // Appel de la fonction au démarrage de l'application
   useEffect(() => {
-    axios
-      .get('https://api.ipify.org/?format=json')
-      .then((response) => {
-        const clientIp = response.data.ip;
-        setIsPersonalPc(clientIp === personalPcIp);
-      })
-      .catch((error) =>
-        console.error('Erreur lors de la récupération de l\'IP:', error)
-      );
+    checkIfPersonalMachine();
   }, []);
 
+  const isActiveLink = (path) => location.pathname === path;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
   return (
     <div className="navbar-container">
       {/* Menu Burger */}
