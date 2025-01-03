@@ -23,7 +23,7 @@
 
 //     useEffect(() => {
 //         console.log("Visite enregistrée pour la page Contact");  // Ajoutez un log ici
-//         axios.post('https://apiaeonix-production-3187.up.railway.app/api/visit/contact', {
+//         axios.post('https://apiaeonix-production.up.railway.app/api/visit/contact', {
 //             page: 'contact', // Le nom de la page à enregistrer
 //         })
 //         .then(response => {
@@ -190,7 +190,7 @@ function Contact() {
             if (!visitedPages[pageName]) {
                 // Si non, envoyer la requête pour enregistrer la visite
                 const response = await axios.post(
-                    `https://apiaeonix-production-3187.up.railway.app/api/visit/${pageName}`,
+                    `https://apiaeonix-production.up.railway.app/api/visit/${pageName}`,
                     {},
                     {
                         headers: {
