@@ -138,22 +138,38 @@ function Navbar({ onLinkClick }) {
     setIsModalOpen(false);
   };
 
-  // Identifiant unique pour votre machine dans l'environnement de développement
-  const personalMachineId = process.env.REACT_APP_PERSONAL_PC_ID; // Lecture de la variable d'environnement
+  // // Identifiant unique pour votre machine dans l'environnement de développement
+  // const personalMachineId = process.env.REACT_APP_PERSONAL_PC_ID; // Lecture de la variable d'environnement
 
-  // Vérifie si la clé correspond à celle de votre machine
+  // // Vérifie si la clé correspond à celle de votre machine
+  // const checkIfPersonalMachine = () => {
+  //   if (personalMachineId === '8e928ce6ea9f6255a74cbbdd664820d0') {
+  //     setIsPersonalPc(true);
+  //   } else {
+  //     setIsPersonalPc(false);
+  //   }
+  // };
+
+
+
+  // Lire l'ID de la machine depuis la variable d'environnement
+  const personalMachineIdFromEnv = process.env.REACT_APP_PERSONAL_PC_ID;
+
+  // Vérifie si l'ID de la machine correspond à celle spécifiée dans le fichier .env
   const checkIfPersonalMachine = () => {
-    if (personalMachineId === '8e928ce6ea9f6255a74cbbdd664820d0') {
-      setIsPersonalPc(true);
+    // Si la variable d'environnement est définie, vérifiez la condition
+    if (personalMachineIdFromEnv && personalMachineIdFromEnv === 'unique_machine_id_12345') {
+      setIsPersonalPc(true); // Afficher le tableau de bord pour cette machine
     } else {
-      setIsPersonalPc(false);
+      setIsPersonalPc(false); // Ne pas afficher le tableau de bord pour d'autres machines
     }
   };
 
-  // Appel de la fonction au démarrage de l'application
+  // Effectuer la vérification au démarrage de l'application
   useEffect(() => {
     checkIfPersonalMachine();
   }, []);
+
 
   const isActiveLink = (path) => location.pathname === path;
 
