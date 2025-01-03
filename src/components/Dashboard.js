@@ -47,6 +47,23 @@ function Dashboard() {
     }
   }, [activeTab]);
 
+
+
+  const resetVisits = () => {
+    axios
+      .delete('https://apiaeonix-production.up.railway.app/api/visit') // Requête DELETE pour réinitialiser les visites
+      .then((response) => {
+        alert('Les visites ont été réinitialisées avec succès.');
+        setPageVisits([]); // Vider les visites affichées sur le tableau
+      })
+      .catch((error) => {
+        console.error('Erreur lors de la réinitialisation des visites:', error);
+        alert('Erreur lors de la réinitialisation des visites.');
+      });
+  };
+  
+
+
   const fetchProspects = () => {
     axios
       .get('https://apiaeonix-production.up.railway.app/api/prospects')
@@ -175,9 +192,10 @@ function Dashboard() {
   const renderVisitsTable = () => (
     <div>
       <h2>Visites des Pages</h2>
-      <button className="reset-button" onClick={() => setActiveTab('')}>
+      <button className="reset-button" onClick={resetVisits}>
         Réinitialiser
       </button>
+
       <table className="dashboard-table">
         <thead>
           <tr>
