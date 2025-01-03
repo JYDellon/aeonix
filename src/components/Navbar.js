@@ -11,7 +11,9 @@ function Navbar({ onLinkClick }) {
   const [isPersonalPc, setIsPersonalPc] = useState(false);
 
   // Votre IP publique (à personnaliser)
-  const personalPcIp = '109.9.43.34';
+  // const personalPcIp = '109.9.43.34';
+  const personalPcIp = '77.128.153.72';
+
 
   const isActiveLink = (path) => location.pathname === path;
   const [isModalOpen, setIsModalOpen] = useState(false);
