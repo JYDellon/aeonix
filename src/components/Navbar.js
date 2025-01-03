@@ -277,8 +277,8 @@ function Navbar({ onLinkClick }) {
 
 
   useEffect(() => {
-    // Envoie la requête en incluant les cookies avec 'withCredentials: true'
-    axios.get('https://apiaeonix-production.up.railway.app/api/dashboard', { withCredentials: true })
+      // Envoie la requête en incluant les cookies avec 'withCredentials: true'
+      axios.get('https://apiaeonix-production.up.railway.app/api/dashboard', { withCredentials: true })
       .then(response => {
         if (response.status === 200) {
           setAccessGranted(true);  // Si l'accès est autorisé, on affiche le tableau de bord
