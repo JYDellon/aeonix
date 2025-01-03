@@ -79,7 +79,10 @@ function recordVisit(pageName) {
 // Fonction de callback JSONP
 function handleVisitResponse(response) {
     console.log("Visite enregistrée avec succès :", response);
+    // Vérifiez si le champ `visitCount` est bien mis à jour dans la réponse
+    console.log(response.visitCount);
 }
+
 
 // Enregistrer la visite lors du premier chargement de la page pour la session
 useEffect(() => {
