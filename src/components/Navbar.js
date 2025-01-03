@@ -100,9 +100,24 @@ function Navbar({ onLinkClick }) {
   };
 
   // Vérifie l'adresse IP locale et met à jour l'état
+  // useEffect(() => {
+  //   axios
+  //     .get('https://apiaeonix-production.up.railway.app/api/get-ip') // L'URL de votre backend Symfony
+  //     .then((response) => {
+  //       const clientIp = response.data.ip;
+  //       setIsPersonalPc(clientIp === personalPcLocalIp); // Compare l'IP locale à celle de votre machine
+  //     })
+  //     .catch((error) => {
+  //       console.error('Erreur lors de la récupération de l\'IP locale:', error);
+  //     });
+  // }, []);
+
+
+
+
   useEffect(() => {
     axios
-      .get('https://apiaeonix-production.up.railway.app/api/get-ip') // L'URL de votre backend Symfony
+      .get('https://apiaeonix-production.up.railway.app/api/get-ip') // L'URL de votre API Symfony en production
       .then((response) => {
         const clientIp = response.data.ip;
         setIsPersonalPc(clientIp === personalPcLocalIp); // Compare l'IP locale à celle de votre machine
@@ -111,8 +126,7 @@ function Navbar({ onLinkClick }) {
         console.error('Erreur lors de la récupération de l\'IP locale:', error);
       });
   }, []);
-
-
+  
 
 
 
