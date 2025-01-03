@@ -143,7 +143,7 @@ function Navbar({ onLinkClick }) {
 
   // Vérifie si la clé correspond à celle de votre machine
   const checkIfPersonalMachine = () => {
-    if (personalMachineId === 'unique_machine_identifier') {
+    if (personalMachineId === '8e928ce6ea9f6255a74cbbdd664820d0') {
       setIsPersonalPc(true);
     } else {
       setIsPersonalPc(false);
