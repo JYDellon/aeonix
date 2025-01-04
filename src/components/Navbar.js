@@ -758,7 +758,7 @@ function Navbar({ onLinkClick }) {
     const uuid = getDeviceUUID(); // Récupère le UUID de l'appareil
 
     axios
-      .get('http://localhost:8000/api/dashboard', {
+      .get('apiaeonix-production.up.railway.app/api/dashboard', {
         headers: { 'X-Device-ID': uuid }, // Envoie le UUID dans l'en-tête
         withCredentials: true,
       })
