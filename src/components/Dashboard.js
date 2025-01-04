@@ -1046,7 +1046,7 @@ function Dashboard() {
   useEffect(() => {
     // Ici, on suppose qu'il existe une route /dashboard sur le backend
     // qui renvoie 403 si l'utilisateur n'a pas le bon cookie
-    fetch('http://localhost:8000/dashboard', {
+    fetch('https://apiaeonix-production.up.railway.app/dashboard', {
       method: 'GET',
       credentials: 'include', // pour envoyer le cookie
     })
