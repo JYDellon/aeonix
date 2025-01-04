@@ -1,21 +1,42 @@
+
+
+
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import axios from 'axios';
-import { useTranslation } from 'react-i18next'; // Importez le hook
+import { useTranslation } from 'react-i18next';
 import './Navbar.css';
+// Plus besoin de axios ici si tu ne fais plus de requête IP
+// import axios from 'axios';
 
 function Navbar({ onLinkClick }) {
   const location = useLocation();
-  const { t } = useTranslation(); // Utilisez le hook pour accéder aux traductions
+  const { t } = useTranslation();
+
+  // État local pour le menu burger
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isPersonalPc, setIsPersonalPc] = useState(false);
-
-  // Votre IP publique (à personnaliser)
-  const personalPcIp = '109.9.43.34';
-
-  const isActiveLink = (path) => location.pathname === path;
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  // État indiquant si on a le cookie
+  const [hasCookie, setHasCookie] = useState(false);
+
+  const isActiveLink = (path) => location.pathname === path;
+
+  // ----- 1) Appel /api/auto-login au chargement -----
+  useEffect(() => {
+    fetch('https://apiaeonix-production.up.railway.app/api/auto-login', {
+      method: 'GET',
+      credentials: 'include', 
+    })
+      .then((res) => {
+        if (res.ok) {
+          setHasCookie(true);
+        }
+      })
+      .catch((err) => console.error(err));
+  }, []);
+  // --------------------------------------------------
+
+  // Handlers pour le menu
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
   };
@@ -35,19 +56,6 @@ function Navbar({ onLinkClick }) {
     setIsModalOpen(false);
   };
 
-  // Vérifie l'adresse IP et met à jour l'état
-  useEffect(() => {
-    axios
-      .get('https://api.ipify.org/?format=json')
-      .then((response) => {
-        const clientIp = response.data.ip;
-        setIsPersonalPc(clientIp === personalPcIp);
-      })
-      .catch((error) =>
-        console.error('Erreur lors de la récupération de l\'IP:', error)
-      );
-  }, []);
-
   return (
     <div className="navbar-container">
       {/* Menu Burger */}
@@ -63,12 +71,13 @@ function Navbar({ onLinkClick }) {
         </div>
       </div>
 
-      {/* Modale pour les petits écrans */}
+      {/* =================== MODALE (petits écrans) =================== */}
       {isModalOpen && (
         <div className="modalXXX" onClick={closeModal}>
           <div className="modalXXX-content">
             <nav className="modalXXX-menu">
               <ul>
+                {/* Liens classiques */}
                 <li>
                   <Link
                     to="/"
@@ -123,7 +132,9 @@ function Navbar({ onLinkClick }) {
                     {t('navbar.rgpd')}
                   </Link>
                 </li>
-                {isPersonalPc && (
+
+                {/* Lien Dashboard conditionné par hasCookie */}
+                {hasCookie && (
                   <li>
                     <Link
                       to="/dashboard"
@@ -140,12 +151,10 @@ function Navbar({ onLinkClick }) {
         </div>
       )}
 
-      <nav
-        className={`navbar-menu ${
-          isMenuOpen ? 'open' : ''
-        } ${isPersonalPc ? 'personal-ip' : ''}`}
-      >
+      {/* =================== NAVBAR (grands écrans) =================== */}
+      <nav className={`navbar-menu ${isMenuOpen ? 'open' : ''}`}>
         <ul>
+          {/* Liens classiques */}
           <li>
             <Link
               to="/"
@@ -200,7 +209,9 @@ function Navbar({ onLinkClick }) {
               {t('navbar.rgpd')}
             </Link>
           </li>
-          {isPersonalPc && (
+
+          {/* Ici aussi, on conditionne l'affichage par hasCookie */}
+          {hasCookie && (
             <li>
               <Link
                 to="/dashboard"
@@ -218,22 +229,3 @@ function Navbar({ onLinkClick }) {
 }
 
 export default Navbar;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
