@@ -4,7 +4,7 @@ function Login() {
   const handleLogin = async () => {
     try {
       // IMPORTANT : credentials: 'include' pour que le cookie soit bien envoyé / reçu
-      const response = await fetch('https://localhost:8000/api/login', {
+      const response = await fetch('https://apiaeonix-production.up.railway.app/api/login', {
         method: 'POST',
         credentials: 'include', 
         headers: {

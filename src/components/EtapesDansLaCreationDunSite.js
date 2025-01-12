@@ -30,7 +30,7 @@
 //     useEffect(() => {
 //         const recordVisit = async () => {
 //             try {
-//                 const response = await axios.post('https://localhost:8000/api/visit/etapesCreationSite', {}, {
+//                 const response = await axios.post('https://apiaeonix-production.up.railway.app/api/visit/etapesCreationSite', {}, {
 //                     headers: {
 //                         'Content-Type': 'application/json',
 //                     },
@@ -144,7 +144,7 @@
 //                 if (!visitedPages[pageName]) {
 //                     // Si non, envoyer la requête pour enregistrer la visite
 //                     const response = await axios.post(
-//                         `https://localhost:8000/api/visit/${pageName}`,
+//                         `https://apiaeonix-production.up.railway.app/api/visit/${pageName}`,
 //                         {},
 //                         {
 //                             headers: {
@@ -247,7 +247,7 @@ function EtapesDansLaCreationDunSite() {
                 const visitedPages = JSON.parse(sessionStorage.getItem('visitedPages')) || {};
                 if (!visitedPages[pageName]) {
                     const response = await axios.post(
-                        `https://localhost:8000/api/visit/${pageName}`,
+                        `https://apiaeonix-production.up.railway.app/api/visit/${pageName}`,
                         {},
                         {
                             headers: {

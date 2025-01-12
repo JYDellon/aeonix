@@ -735,7 +735,7 @@ export default Navbar;
 
 //     // Vérifie si l'utilisateur est authentifié
 //     axios
-//       .get('https://localhost:8000/api/auth/status', { withCredentials: true })
+//       .get('https://apiaeonix-production.up.railway.app/api/auth/status', { withCredentials: true })
 //       .then((response) => {
 //         if (response.status === 200) {
 //           setIsAuthorized(true);
