@@ -19,7 +19,7 @@ function APropos() {
     const recordVisit = async () => {
         try {
             const response = await axios.post(
-                'https://apiaeonix-production.up.railway.app/api/visit/a-propos',
+                'https://localhost:8000/api/visit/a-propos',
                 {},
                 {
                     headers: {

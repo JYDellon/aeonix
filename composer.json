@@ -1,7 +1,8 @@
 {
     "require": {
         "symfony/orm-pack": "^2.4",
-        "nelmio/cors-bundle": "^2.5"
+        "nelmio/cors-bundle": "^2.5",
+        "easycorp/easyadmin-bundle": "^4.20"
     },
     "require-dev": {
         "symfony/maker-bundle": "^1.61"

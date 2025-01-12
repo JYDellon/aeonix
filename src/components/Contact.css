@@ -59,7 +59,7 @@
     margin-top: -140px
 }
 
-.availability-card, .phone-card {
+.availability-card  {
     background-color: #f5f5f5;
     padding: 20px;
     border-radius: 10px;
@@ -69,7 +69,6 @@
 
 .availability-card h3, .phone-card h3 {
     font-size: 20px;
-    margin-bottom: 10px;
 }
 
 /* Disponibilité - Jours et horaires */
@@ -862,7 +861,7 @@
 
   .form-header {
       gap: 1rem;
-      margin-bottom: -100px;
+      margin-bottom: -50px;
   }
 
   .form-button {
@@ -969,7 +968,15 @@
   margin-bottom: 3rem;
 }
 
-.left-section, .center-section, .right-section {
+.center-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  width: 100%; /* Permet aux colonnes de prendre toute la largeur */
+}
+
+.left-section, .right-section {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -1162,3 +1169,440 @@ iframe {
 }
 
 
+/* Réinitialiser tous les marges par défaut */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Conteneur principal */
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding: 1rem;
+  width: 100%;
+  height: 100vh; /* Utiliser toute la hauteur */
+  overflow: hidden; /* Pas de scrollbar verticale */
+}
+
+/* Section de la navbar */
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  z-index: 10;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Layout des cards */
+.contact-layout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colonnes égales */
+  grid-gap: 20px; /* Espacement entre les éléments */
+  width: 90%;
+  margin-top: 90px; /* Ajuster pour rester sous la navbar */
+  height: calc(100vh - 120px); /* Ajuster selon la hauteur */
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Style des cards */
+.card {
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  height: auto; /* Ajustement automatique selon le contenu */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Effet au survol */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Icônes et styles */
+.icon {
+  font-size: 2.5rem;
+  color: #007bff;
+  margin-bottom: 1rem;
+}
+
+.reseaux {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-icon {
+  font-size: 1.5rem;
+  color: #007bff;
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #0056b3;
+}
+
+/* Style spécifique aux sections */
+.availability-card h3, .phone-card h3, .mail-card h3, .social-cardContact h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+iframe {
+  width: 100%;
+  height: 180px; /* Hauteur réduite pour s'adapter à la vue */
+  border-radius: 10px;
+  border: none;
+}
+
+/* Responsive pour écrans moyens */
+@media (max-width: 1024px) {
+  .contact-layout {
+      grid-template-columns: 1fr 1fr; /* 2 colonnes */
+      grid-gap: 15px;
+  }
+
+  iframe {
+      height: 150px; /* Réduction supplémentaire */
+  }
+}
+
+/* Responsive pour petits écrans */
+@media (max-width: 768px) {
+  .contact-layout {
+      grid-template-columns: 1fr; /* Une seule colonne */
+      grid-gap: 10px;
+  }
+
+  iframe {
+      height: 120px;
+  }
+
+  .navbar {
+      height: 60px;
+  }
+
+  .contact-container {
+      padding: 0.5rem;
+  }
+
+  .card {
+      width: 100%; /* Les cards prennent toute la largeur */
+  }
+}
+
+/* Réinitialiser tous les marges par défaut */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Conteneur principal */
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f10e0e;
+  width: 100%;
+  height: 80vh; /* Utiliser toute la hauteur de l'écran */
+  overflow: hidden; /* Supprime la scrollbar verticale */
+  padding: 0;
+}
+
+/* Section de la navbar */
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  z-index: 10;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Layout des cards */
+.contact-layout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colonnes égales */
+  grid-gap: 15px; /* Réduire l'espacement */
+  width: 90%;
+  margin-top: 80px; /* Ajuster sous la navbar */
+  height: calc(100vh - 100px); /* Adapter à la hauteur totale */
+  padding: 10px;
+  align-items: start; /* Monter les `cards` en haut */
+  justify-content: center;
+}
+
+/* Style des cards */
+.card {
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  height: 120px; /* Hauteur compacte pour toutes les `cards` */
+}
+
+/* Effet au survol */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Icônes et styles */
+.icon {
+  font-size: 2rem;
+  color: #007bff;
+  margin-bottom: 0.5rem;
+}
+
+.reseaux {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.social-icon {
+  font-size: 1.2rem;
+  color: #007bff;
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #0056b3;
+}
+
+/* Style spécifique aux sections */
+.availability-card h3, .phone-card h3, .mail-card h3, .social-cardContact h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+iframe {
+  width: 100%;
+  height: 100px; /* Hauteur compacte pour l'iframe */
+  border-radius: 10px;
+  border: none;
+}
+
+/* Responsive pour écrans moyens */
+@media (max-width: 1024px) {
+  .contact-layout {
+      grid-template-columns: 1fr 1fr; /* 2 colonnes */
+      grid-gap: 10px; /* Réduire l'espace entre les `cards` */
+  }
+
+  iframe {
+      height: 100px; /* Hauteur réduite pour les tablettes */
+  }
+}
+
+/* Responsive pour petits écrans */
+@media (max-width: 768px) {
+  .contact-layout {
+      grid-template-columns: 1fr; /* Une seule colonne */
+      grid-gap: 10px;
+  }
+
+  iframe {
+      height: 80px; /* Hauteur compacte */
+  }
+
+  .navbar {
+      height: 60px;
+  }
+
+  .contact-container {
+      padding: 0;
+  }
+
+  .card {
+      height: 100px; /* Taille compacte pour les petits écrans */
+  }
+}
+
+/* Réinitialisation */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Conteneur principal */
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f5f5f500;
+  padding: 1rem;
+  width: 100%;
+  min-height: 100vh; /* Assure la hauteur minimale pour inclure toutes les cartes */
+  overflow-y: auto; /* Active la barre de défilement verticale */
+}
+
+/* En-tête des boutons */
+.form-header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+/* Boutons */
+.form-button {
+  text-align: center;
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-button:hover {
+  background-color: #0056b3;
+}
+
+/* Mise en page des cartes */
+.contact-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive */
+  gap: 20px;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Cartes */
+.card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.availability-card, .phone-card, .mail-card, .social-cardContact {
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Icônes */
+.icon, .availability-icon {
+  font-size: 2rem;
+  color: #007bff;
+  margin-bottom: 1rem;
+}
+
+.social-icon {
+  font-size: 1.5rem;
+  color: #007bff;
+  margin: 0 0.5rem;
+  transition: color 0.3s;
+}
+
+.social-icon:hover {
+  color: #0056b3;
+}
+
+/* Cartes spécifiques */
+.availability-card h3,
+.phone-card h3,
+.mail-card h3,
+.social-cardContact h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* Iframe */
+.center-section iframe {
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+  border: none;
+}
+
+/* Barre de défilement pour petits écrans */
+@media (max-width: 768px) {
+  .contact-container {
+    height: auto; /* Adapte la hauteur */
+    overflow-y: auto; /* Assure un défilement si nécessaire */
+  }
+
+  .form-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  iframe {
+    height: 200px;
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+
+/* Pour très petits écrans */
+@media (max-width: 480px) {
+  .form-header {
+    margin-top: 10px;
+  }
+
+  .form-button {
+    width: 100%;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  iframe {
+    height: 150px;
+  }
+}

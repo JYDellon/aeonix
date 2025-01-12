@@ -128,23 +128,70 @@
   }
   
   /* CardMDevis Style */
-  .cardmDevis {
+/* Cercle "Devis gratuit" avec animation combinée */
+.cardmDevis {
     background: linear-gradient(to right, rgb(97, 53, 0), darkorange);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 10px;
-    border-radius: 50%;
+    border-radius: 50%; /* Forme circulaire */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
     width: 200px;
-    height: 200px;
+    height: 200px; /* Hauteur fixée */
     font-size: 1.5em;
     cursor: pointer;
     opacity: 0;
-    animation: slideAndRotateIn 3s ease-out forwards; /* Animation appliquée ici */
+    animation: biDirectionalMotion 3s ease-out forwards; /* Animation bi-directionnelle */
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
-  }
+}
+
+
+/* Animation bi-directionnelle : déplacement, rotation Y et inclinaison Z */
+@keyframes biDirectionalMotion {
+    0% {
+        transform: translateX(100%) rotateY(0deg) rotateZ(0deg); /* Position initiale hors écran */
+        opacity: 0;
+    }
+    25% {
+        transform: translateX(75%) rotateY(90deg) rotateZ(15deg); /* Rotation Y et inclinaison Z */
+        opacity: 0.5;
+    }
+    50% {
+        transform: translateX(50%) rotateY(180deg) rotateZ(-15deg); /* Mi-parcours avec rotation Y */
+        opacity: 0.8;
+    }
+    75% {
+        transform: translateX(25%) rotateY(270deg) rotateZ(15deg); /* Rotation Y continue */
+        opacity: 0.9;
+    }
+    100% {
+        transform: translateX(0) rotateY(360deg) rotateZ(0deg); /* Arrivée avec rotation complète */
+        opacity: 1;
+    }
+}
+
+
+
+/* Réduction proportionnelle sur petits écrans */
+@media (max-width: 768px) {
+    .cardmDevis {
+        width: 150px;
+        height: 150px;
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 576px) {
+    .cardmDevis {
+        width: 100px;
+        height: 100px;
+        font-size: 1em;
+    }
+}
+
+
   
 .cardm:hover {
     transform: translateY(-10px); 
@@ -472,5 +519,559 @@ h3{
 
 
 
+/* Header Navigation - Assure un meilleur alignement */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Navigation alignée */
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0);
+}
 
-  
+/* Ajustement des textes et marges */
+.intro-textAccueil {
+    font-size: 1.8em;
+    margin-bottom: 10px; /* Plus d'espace entre les éléments */
+    text-align: center;
+    color: #003f5c;
+}
+
+/* Responsive pour les boutons ou cartes */
+.cardm, .cardmDevis {
+    font-size: 1em; /* Taille plus petite pour petit écran */
+    width: auto;
+    padding: 15px 10px;
+}
+
+/* Carousel - Rendre plus discret sur mobile */
+.carousel-container {
+    width: 100%;
+    max-width: 600px; /* Réduction de la taille */
+    margin: 20px auto; /* Centrage */
+    padding: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Conteneur principal pour alignement */
+.centrage {
+    display: flex;
+    flex-direction: column; /* Organise les éléments verticalement */
+    align-items: center;
+    gap: 20px; /* Espacement entre les sections */
+}
+
+/* Carousel bien centré */
+.carousel-container {
+    width: 100%;
+    max-width: 800px;
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
+}
+
+/* CardMDevis Style - Cercle avec animation */
+.cardmDevis {
+    background: linear-gradient(to right, rgb(97, 53, 0), darkorange);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 50%; /* Rétablit la forme circulaire */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+    width: 200px;
+    height: 200px;
+    font-size: 1.5em;
+    cursor: pointer;
+    opacity: 0;
+    animation: slideAndRotateIn 3s ease-out forwards; /* Rétablit l'animation */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/* Animation de montée et rotation */
+@keyframes slideAndRotateIn {
+    0% {
+        transform: translateY(100%) rotateY(360deg); /* Position initiale hors écran avec rotation */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0) rotateY(0); /* Position finale normale */
+        opacity: 1;
+    }
+}
+
+/* Hover effect (optionnel) */
+.cardmDevis:hover {
+    transform: scale(1.1); /* Grossissement au survol */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7);
+}
+
+/* Réinitialiser tous les marges par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Assurez-vous que le body et le html n'ont pas de marges par défaut */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* Fixer la hauteur du header */
+.header {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px; /* Hauteur fixe */
+    width: 100%;
+}
+
+.centrage {
+    display: flex;
+    flex-direction: column; /* Organise les éléments verticalement */
+    align-items: center;
+    gap: 20px; /* Espacement entre les sections */
+}
+
+.accueil-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px 120px;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    justify-content: center;
+    background-color: rgba(78, 50, 205, 0);
+    width: 1000px;
+}
+
+/* Carte rectangulaire "Votre site web clés en main" */
+.cardm {
+    background: linear-gradient(to right, #003f5c, #6a9cb8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+    width: 400px; /* Plus large */
+    height: 150px; /* Moins haute */
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/* Réduction proportionnelle pour les petits écrans */
+@media (max-width: 768px) {
+    .cardm {
+        width: 300px;
+        height: 120px;
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 576px) {
+    .cardm {
+        width: 250px;
+        height: 100px;
+        font-size: 1em;
+    }
+}
+
+/* Cercle "Devis gratuit" */
+.cardmDevis {
+    background: linear-gradient(to right, rgb(97, 53, 0), darkorange);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 50%; /* Forme circulaire */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+    width: 200px;
+    height: 200px;
+    font-size: 1.5em;
+    cursor: pointer;
+    opacity: 0;
+    animation: slideFromRight 3s ease-out forwards; /* Déplacement de droite à gauche */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/* Réduction proportionnelle pour les petits écrans */
+@media (max-width: 768px) {
+    .cardmDevis {
+        width: 150px;
+        height: 150px;
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 576px) {
+    .cardmDevis {
+        width: 100px;
+        height: 100px;
+        font-size: 1em;
+    }
+}
+
+/* Animation pour le cercle - Translation de droite à gauche */
+@keyframes slideFromRight {
+    0% {
+        transform: translateX(100%); /* Position initiale à droite */
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0); /* Position finale */
+        opacity: 1;
+    }
+}
+
+/* Hover effect */
+.cardm:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7);
+}
+
+.cardmDevis:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7);
+}
+
+/* Carousel */
+.carousel-container {
+    width: 100%;
+    max-width: 800px;
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
+}
+
+.carousel-image {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 30px;
+    margin-left: -10px;
+    margin-top: -12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Carte rectangulaire "Votre site web clés en main" */
+.cardm {
+    background: linear-gradient(to right, #003f5c, #6a9cb8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px; /* Conserve les coins arrondis */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+    width: 400px; /* Largeur fixe */
+    height: 200px; /* Même hauteur que le cercle */
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/* Réduction proportionnelle pour les petits écrans */
+@media (max-width: 768px) {
+    .cardm {
+        width: 300px;
+        height: 150px; /* Même hauteur que le cercle réduit */
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 576px) {
+    .cardm {
+        width: 250px;
+        height: 100px; /* Même hauteur que le cercle réduit */
+        font-size: 1em;
+    }
+}
+
+/* Cercle "Devis gratuit" */
+.cardmDevis {
+    background: linear-gradient(to right, rgb(97, 53, 0), darkorange);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 50%; /* Forme circulaire */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+    width: 200px;
+    height: 200px; /* Hauteur fixée pour correspondre au rectangle */
+    font-size: 1.5em;
+    cursor: pointer;
+    opacity: 0;
+    animation: slideFromRight 3s ease-out forwards; /* Déplacement de droite à gauche */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/* Réduction proportionnelle pour les petits écrans */
+@media (max-width: 768px) {
+    .cardmDevis {
+        width: 150px;
+        height: 150px; /* Même hauteur que le rectangle réduit */
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 576px) {
+    .cardmDevis {
+        width: 100px;
+        height: 100px; /* Même hauteur que le rectangle réduit */
+        font-size: 1em;
+    }
+}
+
+/* Carousel - Ajustement de la largeur */
+.carousel-container {
+    width: 100%; /* Prend toute la largeur possible */
+    max-width: 800px; /* Largeur maximale */
+    margin: 20px auto; /* Centré horizontalement */
+    height: 200px; /* Hauteur fixe */
+    padding: 10px;
+    text-align: center;
+    transition: width 0.3s ease-in-out; /* Transition fluide de la largeur */
+}
+
+/* Réduction proportionnelle uniquement sur la largeur */
+@media (max-width: 768px) {
+    .carousel-container {
+        max-width: 600px; /* Réduction pour tablettes */
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-container {
+        max-width: 400px; /* Réduction pour téléphones */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Réinitialiser tous les marges par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Assurez-vous que le body et le html n'ont pas de marges par défaut */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* Fixer la hauteur du header */
+.header {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px; /* Hauteur fixe */
+    width: 100%;
+}
+
+.centrage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.accueil-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px 120px;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    justify-content: center;
+    background-color: rgba(78, 50, 205, 0);
+    width: 1000px;
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.cardm {
+    background: linear-gradient(to right, #003f5c, #6a9cb8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+    width: 500px;
+    min-width: 150px;
+    height: 200px;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    opacity: 0; 
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Animation du cercle cardmDevis */
+@keyframes slideAndRotateIn {
+    0% {
+        transform: translateX(100%) rotateY(720deg); /* Départ hors écran avec rotation */
+        opacity: 0;
+    }
+    50% {
+        transform: translateX(-10%) rotateY(180deg); /* Milieu avec rotation */
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(0) rotateY(0); /* Position finale */
+        opacity: 1;
+    }
+}
+
+.cardmDevis {
+    background: linear-gradient(to right, rgb(97, 53, 0), darkorange);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 50%; /* Forme circulaire */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+    width: 200px;
+    height: 200px; /* Taille fixe */
+    font-size: 1.5em;
+    cursor: pointer;
+    opacity: 0;
+    animation: slideAndRotateIn 3s ease-out forwards; /* Animation exacte appliquée */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover effects */
+.cardm:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7);
+}
+
+.cardmDevis:hover {
+    transform: scale(1.1); 
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7);
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .cardm {
+        width: 300px;
+        height: 150px;
+        font-size: 1.2em;
+    }
+
+    .cardmDevis {
+        width: 150px;
+        height: 150px;
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 576px) {
+    .cardm {
+        width: 250px;
+        height: 100px;
+        font-size: 1em;
+    }
+
+    .cardmDevis {
+        width: 100px;
+        height: 100px;
+        font-size: 1em;
+    }
+}
+
+/* Carousel styles */
+.carousel-container {
+    width: 100%;
+    max-width: 800px;
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
+}
+
+.carousel-image {
+    width: 140px;
+    height: 140px; 
+    object-fit: cover; 
+    border-radius: 10px; 
+    margin-right: 30px; 
+    margin-left: -10px;
+    margin-top: -12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

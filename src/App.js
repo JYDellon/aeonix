@@ -16,7 +16,7 @@ import Dashboard from './components/Dashboard';
 import './App.css';
 import './i18n'; // Importation d'i18n
 import { useTranslation } from 'react-i18next';
-
+import IntroVideo from "./components/IntroVideo"; // Importez IntroVideo
 
 import flagFR from './assets/images/fr.png';
 import flagEN from './assets/images/en.png';
