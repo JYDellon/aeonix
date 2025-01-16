@@ -1,20 +1,38 @@
 /* Conteneur principal */
 .etapes-container {
-    width: 550px;
+    width: 100%;
     margin: 0 auto;
     background-color: rgba(51, 255, 0, 0);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    height: 500px;
+    height: 550px;
     overflow-y: auto;
 
 }
 
 /* Conteneur pour chaque étape */
 .etape-toggle-container {
+  max-width: 400px;
+  width: 60%;
+  margin-bottom: 10px;
+  border: 1px solid #fa070700;
+  border-radius: 30px 30px 30px 30px; 
+  background-color: #fffffff8;
+  transition: box-shadow 0.3s;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards; /* Conserve l'état final */
+  opacity: 0; /* Initialement invisible */
+  
+}
+
+
+
+
+/* Conteneur pour chaque étape */
+.etape-toggle-container {
     margin: 0 auto;
     margin-bottom: 15px;
-    border: 1px solid #fa070700;
+    border: 1px solid #fada0700;
     border-radius: 30px 30px 30px 30px; 
     background-color: #ffffff;
     transition: box-shadow 0.3s;
@@ -59,14 +77,13 @@ h2{
 /* Contenu des détails d'une étape */
 .etape-toggle-details {
     margin: 0 auto;
-    width: 81%;
+    width: 100%;
     max-width: 400px;
-    padding: 5px 0px;
+    padding: 15px 15px 15px 20px;
     background-color: #ffffff;
     color: #333;
     font-size: 16px;
     line-height: 1.6;
-    border-top: 1px solid #ddd;
     border-radius: 0 0 50px 50px; /* Arrondi en bas pour un effet harmonieux */
 }
 
@@ -162,22 +179,6 @@ h2{
     justify-content: center;
 }
 
-
-
-/* Conteneur pour chaque étape */
-.etape-toggle-container {
-    max-width: 400px;
-    width: 82%;
-    min-width: 70%;
-    margin-bottom: 10px;
-    border: 1px solid #fa070700;
-    border-radius: 30px 30px 30px 30px; 
-    background-color: #fffffff8;
-    transition: box-shadow 0.3s;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards; /* Conserve l'état final */
-    opacity: 0; /* Initialement invisible */
-}
 
 
 
@@ -341,6 +342,78 @@ border: 1px slid white;
 border: 1px slid white;
 }
 }
+
+
+
+/* Animations pour l'apparition depuis la gauche */
+@keyframes entrerGauche {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Animations pour l'apparition depuis la droite */
+@keyframes entrerDroite {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Appliquer les animations conditionnelles */
+.etape-toggle-container.gauche {
+  animation: entrerGauche 0.5s ease-out forwards;
+}
+
+.etape-toggle-container.droite {
+  animation: entrerDroite 0.5s ease-out forwards;
+}
+
+/* Ajout de délais croissants pour un effet de cascade */
+.etape-toggle-container:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.etape-toggle-container:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.etape-toggle-container:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.etape-toggle-container:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.etape-toggle-container:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+/* Conteneur des étapes */
+.etape-toggle-container {
+  margin: 0 auto;
+  border-radius: 30px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s;
+  opacity: 0; /* Initialement invisible */
+  margin-bottom: 5px;
+  width: 50%;
+}
+
+
+
+
+
+
+
+
 
 
 
